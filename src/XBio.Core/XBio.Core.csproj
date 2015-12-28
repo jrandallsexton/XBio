@@ -39,16 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IAchievement.cs" />
     <Compile Include="Interfaces\IAddress.cs" />
     <Compile Include="Interfaces\IAuditable.cs" />
     <Compile Include="Interfaces\IObjective.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IPosition.cs" />
+    <Compile Include="Interfaces\IPositionDetail.cs" />
     <Compile Include="Interfaces\IPostal.cs" />
     <Compile Include="Interfaces\IResume.cs" />
     <Compile Include="Interfaces\IState.cs" />
     <Compile Include="Interfaces\ISummary.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\PositionDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
-﻿namespace XBio.Core.Interfaces
+﻿
+namespace XBio.Core.Interfaces
 {
-    public interface IAchievement : IAuditable
+    public interface IPositionDetail
     {
         int Id { get; set; }
         int PositionId { get; set; }

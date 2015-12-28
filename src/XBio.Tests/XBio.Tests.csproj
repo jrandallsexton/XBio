@@ -44,10 +44,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RepositoryBaseTests.cs" />
     <Compile Include="Service\ResumeServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XBio.Core\XBio.Core.csproj">
+      <Project>{97b76d14-2eed-4f5c-af1a-b47c6f250346}</Project>
+      <Name>XBio.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBio.Data\XBio.Data.csproj">
+      <Project>{ade107a5-88b6-4493-92aa-0f33ac33f866}</Project>
+      <Name>XBio.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBio.Service\XBio.Service.csproj">
+      <Project>{88265b3a-e08d-4c92-aaf1-6ac3df43be26}</Project>
+      <Name>XBio.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

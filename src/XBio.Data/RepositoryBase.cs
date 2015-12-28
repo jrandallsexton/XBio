@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
@@ -14,7 +15,7 @@ namespace XBio.Data
         public RepositoryBase()
         {
             this._connectionString =
-                @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=WorkCenters;Data Source=sqlxiit01vn01.servpro.int\wcom";
+                @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=ResumeDb;Data Source=(local)";
         }
 
         /// <summary>
@@ -79,14 +80,10 @@ namespace XBio.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public bool ExecuteInLineSql(string sqlStatement, IList<SqlParameter> paramList)
         {
-
-
             using (var connection = new SqlConnection(this._connectionString))
             {
-
                 using (var cmdSql = new SqlCommand(sqlStatement, connection))
                 {
-
                     cmdSql.CommandTimeout = 3000;
                     cmdSql.CommandType = CommandType.Text;
 
@@ -97,9 +94,27 @@ namespace XBio.Data
 
                     return true;
                 }
-
             }
+        }
 
+        public int ExecuteIdentity(string sql, IList<SqlParameter> paramList)
+        {
+
+            using (var connection = new SqlConnection(this._connectionString))
+            {
+                using (var cmdSql = new SqlCommand(sql, connection))
+                {
+                    cmdSql.CommandTimeout = 3000;
+                    cmdSql.CommandType = CommandType.Text;
+
+                    if (paramList != null)
+                        foreach (var p in paramList) { cmdSql.Parameters.Add(p); }
+
+                    connection.Open();
+
+                    return (int)(decimal)cmdSql.ExecuteScalar();
+                }
+            }
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 
 namespace XBio.Core.Interfaces
 {
@@ -9,6 +10,7 @@ namespace XBio.Core.Interfaces
         int PersonId { get; set; }
         int CompanyId { get; set; }
         int TitleId { get; set; }
+        IEnumerable<IPositionDetail> Details { get; set; }
         DateTime StartDate { get; set; }
         DateTime? EndDate { get; set; }
     }
