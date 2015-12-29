@@ -15,7 +15,7 @@ namespace XBio.Data
         public RepositoryBase()
         {
             this._connectionString =
-                @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=ResumeDb;Data Source=(local)";
+                @"Persist Security Info=False;Initial Catalog=ResumeDb;Data Source=DBSVR01;User Id=sa;Password=sesame1?";
         }
 
         /// <summary>
@@ -112,7 +112,12 @@ namespace XBio.Data
 
                     connection.Open();
 
-                    return (int)(decimal)cmdSql.ExecuteScalar();
+                    var val = cmdSql.ExecuteScalar();
+
+                    int id;
+                    int.TryParse(val.ToString(), out id);
+
+                    return id;
                 }
             }
         }

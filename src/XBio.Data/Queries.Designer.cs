@@ -61,19 +61,54 @@ namespace XBio.Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SET ANSI_NULLS OFF
-        ///GO
-        ///SET QUOTED_IDENTIFIER OFF
-        ///GO
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[PositionDetail] WHERE [Id] = @Id)
+        ///	BEGIN
+        ///		UPDATE dbo.[PositionDetail]
+        ///		SET
+        ///			[PositionId] = @PositionId,
+        ///			[Title] = @Title,
+        ///			[Value] = @Value,
+        ///			[Order] = @Order,
+        ///			[Modified] = GetDate()
+        ///		WHERE [Id] = @Id
+        ///		SELECT @Id
+        ///	END
+        ///ELSE
+        ///	BEGIN
+        ///		INSERT INTO dbo.[PositionDetail] (
+        ///			[PositionId],
+        ///			[Title],
+        ///			[Value],
+        ///			[Order])
+        ///		VALUES (
+        ///			@PositionId,
+        ///			@Title,
+        ///			@Value,
+        ///			@Order)
+        ///		SELECT SCOPE_IDENTITY()
+        ///	END.
+        /// </summary>
+        internal static string PositionDetailSave {
+            get {
+                return ResourceManager.GetString("PositionDetailSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM dbo.[Position] P WHERE P.[Id] = @PositionId
         ///
-        ///DECLARE @Id int
-        ///DECLARE @PersonId int
-        ///DECLARE @CompanyId int
-        ///DECLARE @TitleId int
-        ///DECLARE @StartDate date
-        ///DECLARE @EndDate date
-        ///
-        ///IF EXISTS (SELECT * FROM [dbo].[Position] WHERE [Id] = @Id)
+        ///SELECT PD.* FROM dbo.[PositionDetail] PD
+        ///INNER JOIN dbo.[Position] P ON P.[Id] = PD.[PositionId]
+        ///WHERE P.[Id] = @PositionId.
+        /// </summary>
+        internal static string PositionGet {
+            get {
+                return ResourceManager.GetString("PositionGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[Position] WHERE [Id] = @Id)
         ///	BEGIN
         ///		UPDATE dbo.[Position]
         ///		SET
@@ -87,7 +122,19 @@ namespace XBio.Data {
         ///	END
         ///ELSE
         ///	BEGIN
-        ///		INSERT INTO dbo.[Positi [rest of string was truncated]&quot;;.
+        ///		INSERT INTO dbo.[Position] (
+        ///			[PersonId],
+        ///			[CompanyId],
+        ///			[TitleId],
+        ///			[StartDate],
+        ///			[EndDate])
+        ///		VALUES (
+        ///			@PersonId,
+        ///			@CompanyId,
+        ///			@TitleId,
+        ///			@StartDate,
+        ///			@EndDate)
+        ///		SELECT SCOPE_IDEN [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PositionSave {
             get {

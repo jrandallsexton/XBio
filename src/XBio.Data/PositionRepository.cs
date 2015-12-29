@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+
 using XBio.Core.Interfaces;
 using XBio.Core.Models;
 
@@ -13,7 +14,43 @@ namespace XBio.Data
     {
         public Position Get(int id)
         {
-            throw new NotImplementedException();
+            Position position = null;
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = Queries.PositionGet;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("PositionId", SqlDbType.Int) {Value = id});
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    rdr.Read();
+
+                    position = new Position
+                    {
+                        Id = rdr.GetInt32(0),
+                        PersonId = rdr.GetInt32(1),
+                        CompanyId = rdr.GetInt32(2),
+                        TitleId = rdr.GetInt32(3),
+                        StartDate = rdr.GetDateTime(4)
+                    };
+
+                    if (!rdr.IsDBNull(5))
+                        position.EndDate = rdr.GetDateTime(5);
+
+                    if (!rdr.NextResult())
+                        return position;
+
+                    position.Details = GetDetails(rdr);
+                }
+            }
+
+            return position;
         }
 
         public int Save(IPosition position)
@@ -38,9 +75,38 @@ namespace XBio.Data
 
         }
 
+        private List<IPositionDetail> GetDetails(IDataReader rdr)
+        {
+            var details = new List<IPositionDetail>();
+
+            while (rdr.Read())
+            {
+                details.Add(new PositionDetail
+                {
+                    Id = rdr.GetInt32(0),
+                    PositionId = rdr.GetInt32(1),
+                    Title = rdr.IsDBNull(2) ? string.Empty : rdr.GetString(2),
+                    Value = rdr.GetString(3),
+                    Order = rdr.GetInt32(4)
+                });
+            }
+
+            return details;
+        }
+
         private void Save(int positionId, IPositionDetail detail)
         {
+            detail.PositionId = positionId;
+            var paramList = new List<SqlParameter>
+            {
+                new SqlParameter("Id", SqlDbType.Int) {Value = detail.Id},
+                new SqlParameter("PositionId", SqlDbType.Int) {Value = detail.PositionId},
+                new SqlParameter("Title", SqlDbType.NVarChar) {Value = string.IsNullOrEmpty(detail.Title) ? "[]" : detail.Title},
+                new SqlParameter("Value", SqlDbType.NVarChar) {Value = detail.Value},
+                new SqlParameter("Order", SqlDbType.Int) {Value = detail.Order}
+            };
 
+            detail.Id = ExecuteIdentity(Queries.PositionDetailSave, paramList);
         }
     }
 }

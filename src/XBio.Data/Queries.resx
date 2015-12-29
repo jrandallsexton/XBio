@@ -117,20 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="PositionDetailSave" xml:space="preserve">
+    <value>IF EXISTS (SELECT * FROM [dbo].[PositionDetail] WHERE [Id] = @Id)
+	BEGIN
+		UPDATE dbo.[PositionDetail]
+		SET
+			[PositionId] = @PositionId,
+			[Title] = @Title,
+			[Value] = @Value,
+			[Order] = @Order,
+			[Modified] = GetDate()
+		WHERE [Id] = @Id
+		SELECT @Id
+	END
+ELSE
+	BEGIN
+		INSERT INTO dbo.[PositionDetail] (
+			[PositionId],
+			[Title],
+			[Value],
+			[Order])
+		VALUES (
+			@PositionId,
+			@Title,
+			@Value,
+			@Order)
+		SELECT SCOPE_IDENTITY()
+	END</value>
+  </data>
+  <data name="PositionGet" xml:space="preserve">
+    <value>SELECT * FROM dbo.[Position] P WHERE P.[Id] = @PositionId
+
+SELECT PD.* FROM dbo.[PositionDetail] PD
+INNER JOIN dbo.[Position] P ON P.[Id] = PD.[PositionId]
+WHERE P.[Id] = @PositionId</value>
+  </data>
   <data name="PositionSave" xml:space="preserve">
-    <value>SET ANSI_NULLS OFF
-GO
-SET QUOTED_IDENTIFIER OFF
-GO
-
-DECLARE @Id int
-DECLARE @PersonId int
-DECLARE @CompanyId int
-DECLARE @TitleId int
-DECLARE @StartDate date
-DECLARE @EndDate date
-
-IF EXISTS (SELECT * FROM [dbo].[Position] WHERE [Id] = @Id)
+    <value>IF EXISTS (SELECT * FROM [dbo].[Position] WHERE [Id] = @Id)
 	BEGIN
 		UPDATE dbo.[Position]
 		SET
