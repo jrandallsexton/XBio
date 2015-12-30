@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-
+using XBio.Core.Dtos;
 using XBio.Core.Interfaces;
 using XBio.Core.Models;
 
@@ -12,6 +12,17 @@ namespace XBio.Data
 {
     public class PositionRepository : RepositoryBase
     {
+
+        public IEnumerable<KvpItem> GetPositionsByPersonId(int personId)
+        {
+            var values = new List<KvpItem>
+            {
+                new KvpItem(0, "Sr. Developer - Bechtel Corporation"),
+                new KvpItem(1, "Sr. Developer - SERVPRO Industries")
+            };
+            return values;
+        }
+
         public Position Get(int id)
         {
             Position position = null;

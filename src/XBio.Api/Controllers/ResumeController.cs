@@ -8,7 +8,7 @@ using XBio.Service;
 namespace XBio.Api.Controllers
 {
 
-    [RoutePrefix("api/resumes")]
+    [RoutePrefix("api/resume")]
     public class ResumeController : ApiController
     {
         private ResumeService _service = new ResumeService();
