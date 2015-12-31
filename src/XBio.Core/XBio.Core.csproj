@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\KvpItem.cs" />
+    <Compile Include="Dtos\PersonDto.cs" />
+    <Compile Include="Dtos\PositionDetailDto.cs" />
+    <Compile Include="Dtos\PositionDto.cs" />
     <Compile Include="Interfaces\IAddress.cs" />
     <Compile Include="Interfaces\IAuditable.cs" />
     <Compile Include="Interfaces\IObjective.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="Interfaces\IResume.cs" />
     <Compile Include="Interfaces\IState.cs" />
     <Compile Include="Interfaces\ISummary.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\PositionDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

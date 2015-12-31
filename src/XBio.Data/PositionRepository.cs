@@ -64,7 +64,7 @@ namespace XBio.Data
             return position;
         }
 
-        public int Save(IPosition position)
+        public void Save(IPosition position)
         {
 
             var paramList = new List<SqlParameter>
@@ -82,7 +82,7 @@ namespace XBio.Data
             if (position.Details.Any())
                 position.Details.ToList().ForEach(x => { Save(positionId, x); });
 
-            return positionId;
+            position.Id = positionId;
 
         }
 
