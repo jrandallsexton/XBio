@@ -17,8 +17,8 @@ namespace XBio.Data
         {
             var values = new List<KvpItem>
             {
-                new KvpItem(0, "Sr. Developer - Bechtel Corporation"),
-                new KvpItem(1, "Sr. Developer - SERVPRO Industries")
+                new KvpItem(2, "Sr. Developer - Bechtel Corporation"),
+                new KvpItem(1, "Programmer/Analyst - DPRA, Inc.")
             };
             return values;
         }

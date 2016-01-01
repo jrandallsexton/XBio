@@ -16,13 +16,27 @@ var apiWrapper = new function () {
         }, true);
     };
 
+    this.getPersonDetails = function(personId, callback) {
+        var url = this.rootPath + "api/person/" + personId + "/detail"
+        this.ajaxGet(url, function (values) {
+            callback(values);
+        }, true);
+    };
+
     this.getCompanies = function (callback) {
         this.getData("getCompanies", this.rootPath + "api/company/lookup", callback); };
 
-    this.getPositions = function(personId, callback) {
-        var url = this.rootPath + "api/person/" + personId + "/position/lookup"
+    this.getPosition = function(personId, positionId, callback) {
+        var url = this.rootPath + "api/person/" + personId + "/position/" + positionId;
         this.ajaxGet(url, function (values) {
-            apiWrapper.appCache(cacheKey, values, true);
+            callback(values);
+        }, true);
+    };
+
+    this.getPositions = function(personId, callback) {
+        var url = this.rootPath + "api/person/" + personId + "/position"
+        this.ajaxGet(url, function (values) {
+            //apiWrapper.appCache(cacheKey, values, true);
             callback(values);
         }, true);
     };
