@@ -12,10 +12,12 @@ namespace XBio.Core.Dtos
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string Display { get; set; }
-        public List<PositionDto> Positions { get; set; }
+        public AddressDto Address { get; set; }
+        public IEnumerable<PositionDto> Positions { get; set; }
 
         public PersonDto()
         {
+            this.Address = new AddressDto();
             this.Positions = new List<PositionDto>();
         }
     }

@@ -61,6 +61,47 @@ namespace XBio.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT
+        ///	A.[Address1],
+        ///	A.Address2,
+        ///	NULL AS [City],
+        ///	NULL AS [State],
+        ///	PO.[Value] AS [Postal]
+        ///FROM [Address] A
+        ///INNER JOIN [Postal] PO ON PO.[Id] = A.[PostalId]
+        ///INNER JOIN [Person] P ON P.[AddressId] = A.[Id]
+        ///WHERE P.[Id] = @PersonId.
+        /// </summary>
+        internal static string AddressDtoGetByPersonId {
+            get {
+                return ResourceManager.GetString("AddressDtoGetByPersonId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT P.[LastName], P.[FirstName], P.[MiddleName], P.[Display]
+        ///FROM [Person] P
+        ///WHERE P.[Id] = @PersonId.
+        /// </summary>
+        internal static string PersonDtoGet {
+            get {
+                return ResourceManager.GetString("PersonDtoGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT PD.[Title], PD.[Value], PD.[Order]
+        ///FROM dbo.[PositionDetail] PD
+        ///INNER JOIN dbo.[Position] P ON P.[Id] = PD.[PositionId]
+        ///WHERE P.[Id] = @PositionId.
+        /// </summary>
+        internal static string PositionDetailDtosGetByPositionId {
+            get {
+                return ResourceManager.GetString("PositionDetailDtosGetByPositionId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[PositionDetail] WHERE [Id] = @Id)
         ///	BEGIN
         ///		UPDATE dbo.[PositionDetail]
@@ -91,6 +132,28 @@ namespace XBio.Data {
         internal static string PositionDetailSave {
             get {
                 return ResourceManager.GetString("PositionDetailSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT
+        ///	P.Id,
+        ///	C.[Name] AS [Company],
+        ///	T.[Value] AS [Title],
+        ///	0 AS [Telecommute],
+        ///	P.StartDate,
+        ///	P.EndDate,
+        ///	NULL AS [City],
+        ///	NULL AS [State]
+        ///FROM [Position] P
+        ///INNER JOIN [Title] T ON T.[Id] = P.[TitleId]
+        ///INNER JOIN [Company] C ON C.[Id] = P.[CompanyId]
+        ///WHERE P.[PersonId] = @PersonId
+        ///ORDER BY P.[StartDate] DESC.
+        /// </summary>
+        internal static string PositionDtosGetByPersonId {
+            get {
+                return ResourceManager.GetString("PositionDtosGetByPersonId", resourceCulture);
             }
         }
         

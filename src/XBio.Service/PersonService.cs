@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Collections.Generic;
 
 using XBio.Core.Dtos;
@@ -16,7 +15,7 @@ namespace XBio.Service
 
         public PersonDto GetPersonDto(int id)
         {
-            throw new NotImplementedException();
+            return new PersonRepository().GetPerson(id);
         }
     }
 }

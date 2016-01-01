@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\AddressDto.cs" />
     <Compile Include="Dtos\KvpItem.cs" />
     <Compile Include="Dtos\PersonDto.cs" />
     <Compile Include="Dtos\PositionDetailDto.cs" />

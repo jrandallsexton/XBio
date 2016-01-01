@@ -8,5 +8,8 @@ namespace XBio.Core.Dtos
 {
     public class PositionDetailDto
     {
+        public string Title { get; set; }
+        public string Value { get; set; }
+        public int Order { get; set; }
     }
 }

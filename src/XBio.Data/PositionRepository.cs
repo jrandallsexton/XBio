@@ -23,6 +23,45 @@ namespace XBio.Data
             return values;
         }
 
+        public IEnumerable<PositionDto> GetPositionDtos(int personId)
+        {
+            var positions = new List<PositionDto>();
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = Queries.PositionDtosGetByPersonId;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("PersonId", SqlDbType.Int) { Value = personId });
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    while (rdr.Read())
+                    {
+                        var positionId = rdr.GetInt32(0);
+                        var position = new PositionDto
+                        {
+                            Company = rdr.GetString(1),
+                            Title = rdr.GetString(2),
+                            Telecommute = rdr.GetInt32(3) == 1 ? true : false,
+                            StartDate = rdr.GetDateTime(4),
+                            EndDate = rdr.IsDBNull(5) ? DateTime.MaxValue : rdr.GetDateTime(5),
+                            City = rdr.IsDBNull(6) ? string.Empty : rdr.GetString(6),
+                            State = rdr.IsDBNull(7) ? string.Empty : rdr.GetString(7),
+                            Details = GetDetailDtos(positionId)
+                        };
+                        positions.Add(position);
+                    }
+                }
+            }
+
+            return positions;
+        }
+
         public Position Get(int id)
         {
             Position position = null;
@@ -103,6 +142,40 @@ namespace XBio.Data
             }
 
             return details;
+        }
+
+        private IEnumerable<PositionDetailDto> GetDetailDtos(int positionId)
+        {
+            var values = new List<PositionDetailDto>();
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = Queries.PositionDetailDtosGetByPositionId;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("PositionId", SqlDbType.Int) { Value = positionId });
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    while (rdr.Read())
+                    {
+
+                        var position = new PositionDetailDto
+                        {
+                            Title = rdr.IsDBNull(0) ? string.Empty : rdr.GetString(0),
+                            Value = rdr.GetString(1),
+                            Order = rdr.GetInt32(2)
+                        };
+                        values.Add(position);
+                    }
+                }
+            }
+
+            return values;
         }
 
         private void Save(int positionId, IPositionDetail detail)
