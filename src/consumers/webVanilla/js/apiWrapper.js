@@ -41,6 +41,9 @@ var apiWrapper = new function () {
         }, true);
     };
 
+    this.getTitles = function (callback) {
+        this.getData("getTitles", this.rootPath + "api/title/lookup", callback); };
+
     this.ajaxGet = function(url, callback, returnData) {
         $.ajax({
             data: {},

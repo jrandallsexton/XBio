@@ -1,8 +1,10 @@
 ﻿
 using System;
-
+using System.Collections.Generic;
+using XBio.Core.Dtos;
 using XBio.Core.Interfaces;
 using XBio.Core.Models;
+using XBio.Data;
 
 namespace XBio.Service
 {
@@ -11,6 +13,11 @@ namespace XBio.Service
         public Company Get(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<KvpItem> GetLookups()
+        {
+            return new CompanyRepository().GetLookups();
         }
 
         public void Save(ICompany company)

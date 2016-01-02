@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+
 using XBio.Core.Dtos;
 using XBio.Core.Interfaces;
 using XBio.Core.Models;
@@ -15,12 +16,29 @@ namespace XBio.Data
 
         public IEnumerable<KvpItem> GetPositionsByPersonId(int personId)
         {
-            var values = new List<KvpItem>
+            var positions = new List<KvpItem>();
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
             {
-                new KvpItem(2, "Sr. Developer - Bechtel Corporation"),
-                new KvpItem(1, "Programmer/Analyst - DPRA, Inc.")
-            };
-            return values;
+                cmd.CommandText = Queries.PositionsLookupByPersonId;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("PersonId", SqlDbType.Int) { Value = personId });
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    while (rdr.Read())
+                    {
+                        positions.Add(new KvpItem(rdr.GetInt32(0), rdr.GetString(1)));
+                    }
+                }
+            }
+
+            return positions;
         }
 
         public IEnumerable<PositionDto> GetPositionDtos(int personId)

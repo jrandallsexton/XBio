@@ -204,5 +204,21 @@ namespace XBio.Data {
                 return ResourceManager.GetString("PositionSave", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT
+        ///	P.Id,
+        ///	T.[Value] + &apos; - &apos; + C.[Name] AS [Value]
+        ///FROM [Position] P
+        ///INNER JOIN [Title] T ON T.[Id] = P.[TitleId]
+        ///INNER JOIN [Company] C ON C.[Id] = P.[CompanyId]
+        ///WHERE P.[PersonId] = @PersonId
+        ///ORDER BY [Value] DESC.
+        /// </summary>
+        internal static string PositionsLookupByPersonId {
+            get {
+                return ResourceManager.GetString("PositionsLookupByPersonId", resourceCulture);
+            }
+        }
     }
 }

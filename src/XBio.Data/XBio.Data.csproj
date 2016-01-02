@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressRepository.cs" />
+    <Compile Include="CompanyRepository.cs" />
     <Compile Include="PersonRepository.cs" />
     <Compile Include="PositionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +51,7 @@
     </Compile>
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="ResumeRepository.cs" />
+    <Compile Include="TitleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XBio.Core\XBio.Core.csproj">

@@ -221,4 +221,14 @@ ELSE
 		SELECT SCOPE_IDENTITY()
 	END</value>
   </data>
+  <data name="PositionsLookupByPersonId" xml:space="preserve">
+    <value>SELECT
+	P.Id,
+	T.[Value] + ' - ' + C.[Name] AS [Value]
+FROM [Position] P
+INNER JOIN [Title] T ON T.[Id] = P.[TitleId]
+INNER JOIN [Company] C ON C.[Id] = P.[CompanyId]
+WHERE P.[PersonId] = @PersonId
+ORDER BY [Value] DESC</value>
+  </data>
 </root>

@@ -1,8 +1,9 @@
 ﻿
+using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
-
+using XBio.Core.Dtos;
 using XBio.Core.Interfaces;
 using XBio.Core.Models;
 using XBio.Service;
@@ -21,9 +22,17 @@ namespace XBio.Api.Controllers
             return Ok(new CompanyService().Get(id));
         }
 
+        [ResponseType(typeof(IEnumerable<KvpItem>))]
+        [HttpGet]
+        [Route("lookup")]
+        public IHttpActionResult GetLookup()
+        {
+            return Ok(new CompanyService().GetLookups());
+        }
+
         [ResponseType(typeof(Company))]
         [HttpPost]
-        public IHttpActionResult CreateAddress(ICompany company)
+        public IHttpActionResult Create(ICompany company)
         {
             if (company == null)
                 return BadRequest("company cannot be null");
@@ -36,7 +45,7 @@ namespace XBio.Api.Controllers
         [ResponseType(typeof(void))]
         [HttpPut]
         [Route("{id:int}")]
-        public IHttpActionResult UpdatePosition(int id, ICompany company)
+        public IHttpActionResult Update(int id, ICompany company)
         {
             if (id < 0)
                 return BadRequest("Invalid id");
