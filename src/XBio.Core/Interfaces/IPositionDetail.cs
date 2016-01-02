@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace XBio.Core.Interfaces
 {
     public interface IPositionDetail
@@ -8,5 +10,8 @@ namespace XBio.Core.Interfaces
         string Title { get; set; }
         string Value { get; set; }
         int Order { get; set; }
+        DateTime Created { get; set; }
+        DateTime? Modified { get; set; }
+        DateTime? Deleted { get; set; }
     }
 }

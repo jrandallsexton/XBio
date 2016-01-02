@@ -13,6 +13,7 @@
               crossorigin="anonymous">
     </head>
     <body>
+        <br/>
         <div class="container">
             <label for="positions">Position</label>
             <select id="positions"></select>
@@ -41,14 +42,17 @@
             <br/>
             <div class="pull-right">
                 <input class="btn btn-default" type="button" value="Cancel">
-                <input class="btn btn-default" type="submit" value="Save">
+                <input class="btn btn-default" type="submit" value="Save" onclick="positionViewModel.save()">
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
                 integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A=="
                 crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+        <script src="//cdn.quilljs.com/0.20.1/quill.js"></script>
         <script src="js/apiWrapper.js"></script>
+        <script src="js/positionDetailModel.js"></script>
         <script src="js/positionViewModel.js"></script>
         <script>
             $( document ).ready(function() {

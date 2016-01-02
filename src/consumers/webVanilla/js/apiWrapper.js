@@ -44,12 +44,44 @@ var apiWrapper = new function () {
     this.getTitles = function (callback) {
         this.getData("getTitles", this.rootPath + "api/title/lookup", callback); };
 
+    this.savePosition = function(position, callback) {
+        var url = this.rootPath + "api/person/" + position.PersonId + "/position/" + position.Id;
+        this.ajaxPut(url, position, true, function (values) {
+            callback(values);
+        }, true);
+    };
+
     this.ajaxGet = function(url, callback, returnData) {
         $.ajax({
             data: {},
             type: "GET",
             url: url,
             contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (result) {
+                if (callback != null) {
+                    if (returnData) {
+                        callback(result);
+                    }
+                    else {
+                        callback();
+                    }
+                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
+    };
+
+    this.ajaxPut = function(url, data, returnData, callback) {
+        $.ajax({
+            data: JSON.stringify(data),
+            type: "PUT",
+            url: url,
+            traditional: true,
+            contentType: "application/json",
             dataType: "json",
             cache: false,
             success: function (result) {

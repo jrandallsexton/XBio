@@ -121,7 +121,7 @@ namespace XBio.Data
             return position;
         }
 
-        public void Save(IPosition position)
+        public void Save(Position position)
         {
 
             var paramList = new List<SqlParameter>
@@ -143,9 +143,9 @@ namespace XBio.Data
 
         }
 
-        private List<IPositionDetail> GetDetails(IDataReader rdr)
+        private List<PositionDetail> GetDetails(IDataReader rdr)
         {
-            var details = new List<IPositionDetail>();
+            var details = new List<PositionDetail>();
 
             while (rdr.Read())
             {
@@ -198,6 +198,13 @@ namespace XBio.Data
 
         private void Save(int positionId, IPositionDetail detail)
         {
+
+            if (detail.Deleted.HasValue)
+            {
+                DeletePositionDetail(detail.Id);
+                return;
+            }
+
             detail.PositionId = positionId;
             var paramList = new List<SqlParameter>
             {
@@ -209,6 +216,18 @@ namespace XBio.Data
             };
 
             detail.Id = ExecuteIdentity(Queries.PositionDetailSave, paramList);
+        }
+
+        private void DeletePositionDetail(int id)
+        {
+
+            var sqlStatement = "DELETE FROM [PositionDetail] WHERE [Id] = @Id";
+            var paramList = new List<SqlParameter>
+            {
+                new SqlParameter("Id", SqlDbType.Int) {Value = id}
+            };
+
+            ExecuteInLineSql(sqlStatement, paramList);
         }
     }
 }

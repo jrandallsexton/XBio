@@ -5,7 +5,7 @@ using XBio.Core.Interfaces;
 
 namespace XBio.Core.Models
 {
-    public class Position : IPosition
+    public class Position //: IPosition
     {
         public DateTime Created { get; set; }
         public DateTime? Modified { get; set; }
@@ -14,13 +14,13 @@ namespace XBio.Core.Models
         public int PersonId { get; set; }
         public int CompanyId { get; set; }
         public int TitleId { get; set; }
-        public List<IPositionDetail> Details { get; set; }
+        public List<PositionDetail> Details { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
 
         public Position()
         {
-            this.Details = new List<IPositionDetail>();
+            this.Details = new List<PositionDetail>();
         }
     }
 }

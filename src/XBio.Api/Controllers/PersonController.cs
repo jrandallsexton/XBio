@@ -39,10 +39,10 @@ namespace XBio.Api.Controllers
             return Ok(new PersonService().GetPositionsByPersonId(personId));
         }
 
-        [ResponseType(typeof(IPosition))]
+        [ResponseType(typeof(Position))]
         [HttpPost]
         [Route("{personId:int}/position")]
-        public IHttpActionResult CreatePosition(int personId, IPosition position)
+        public IHttpActionResult CreatePosition(int personId, Position position)
         {
             position.PersonId = personId;
             new PersonService().SavePosition(position);
@@ -58,10 +58,10 @@ namespace XBio.Api.Controllers
             return Ok(new PositionService().Get(positionId));
         }
 
-        [ResponseType(typeof(void))]
+        [ResponseType(typeof(IPosition))]
         [HttpPut]
         [Route("{personId:int}/position/{positionId:int}")]
-        public IHttpActionResult UpdatePosition(int personId, int positionId, IPosition position)
+        public IHttpActionResult UpdatePosition(int personId, int positionId, Position position)
         {
             if (personId < 0)
                 return BadRequest("Invalid personId");
@@ -69,7 +69,8 @@ namespace XBio.Api.Controllers
                 return BadRequest("Invalid positionId");
             position.PersonId = personId;
             new PersonService().SavePosition(position);
-            return StatusCode(HttpStatusCode.Accepted);
+            //return StatusCode(HttpStatusCode.Accepted);
+            return Ok(position);
         }
 
         [HttpDelete]

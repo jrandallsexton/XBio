@@ -27,7 +27,7 @@ namespace XBio.Service
             return new PersonRepository().GetPerson(id);
         }
 
-        public void SavePosition(IPosition position)
+        public void SavePosition(Position position)
         {
             new PositionRepository().Save(position);
         }
