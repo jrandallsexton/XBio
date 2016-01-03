@@ -1,10 +1,10 @@
 var PositionDetailModel = function() {
     this.Id = -1;
     this.PositionId =  null;
-    this.Title = null;
-    this.Value = null;
+    this.Title = "[No Title]";
+    this.Value = "[No Value]";
     this.Order = null;
-    //this.Deleted = null;
+    this.Deleted = null;
 };
 
 var PositionModel = function(data) {

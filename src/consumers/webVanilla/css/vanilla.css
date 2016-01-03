@@ -1,0 +1,7 @@
+.editable-click, a.editable-click, a.editable-click:hover {
+    text-decoration: none;
+    border-bottom: none;
+}
+.some_class{
+    width: 600px;
+}

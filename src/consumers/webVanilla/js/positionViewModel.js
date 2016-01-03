@@ -4,6 +4,7 @@ var positionViewModel = new function () {
     this.position = null;
     this.positionDetail = null;
     this.init = function() {
+        //$.fn.editable.defaults.mode = 'inline';
         apiWrapper.getCompanies(function(data) {
             var html = [];
             html.push('<option value="-1">[ Select ]</option>');
@@ -50,14 +51,13 @@ var positionViewModel = new function () {
         var html = [];
         if (details !== null) {
             $.each(details, function(index,item) {
-                if (item.Deleted !== null)
-                    return false;
+                if (item.Deleted !== null) { return false; }
                 html.push('<tr>');
                 html.push('<td><span id="' + item.Order + '" class="edit"><i class="fa fa-pencil-square-o"></i></span>');
                 html.push('<span id="' + item.Order + '" class="delete" style="margin-left:5px;"><i class="fa fa-minus"></i></span></td>');
                 html.push('<td>' + item.Order + '</td>');
                 html.push('<td>' + item.Title + '</td>');
-                html.push('<td><div id="val' + item.Order + '">' + item.Value + '</div></td>');
+                html.push('<td><a href="#" id="val' + item.Order + '" data-id="' + item.Order + '" data-type="textarea" class="detailValue" data-inputclass="some_class">' + item.Value + '</a></td>');
                 html.push('</tr>');
             });
         }
@@ -67,15 +67,29 @@ var positionViewModel = new function () {
         bindEditHandlers();
         bindAddHandlers();
         bindDeleteHandlers();
+        bindXEditable();
+    };
+    bindXEditable = function() {
+        $('.detailValue').editable({ placement: "bottom" });
+        $('#start').editable({ placement: "bottom" });
+        $('.detailValue').on('save', function(e, params) {
+            var dataId = $('#' + this.id).data('id');
+            //alert('id: ' + this.id + ' data-id: ' + dataId);
+            $.each(position.Details, function(index,item) {
+                if (item.Order == dataId) {
+                    item.Value = params.newValue;
+                    return false;
+                }
+            });
+        });
     };
     bindAddHandlers = function() {
         $('.add').click(function() {
-            this.positionDetail = new PositionDetailModel();
-            this.positionDetail.Title = "[No Title]";
-            this.positionDetail.Value = "[No Value]";
-            this.positionDetail.PositionId = this.positionId;
-            this.positionDetail.Order = position.Details.length;
-            position.Details.push(this.positionDetail);
+            var newDetails = new PositionDetailModel();
+            newDetails.PositionId = this.positionId;
+            newDetails.Order = position.Details.length;
+            this.positionDetail = newDetails;
+            position.Details.push(newDetails);
             displayDetails(position.Details);
         });
     };
@@ -83,10 +97,6 @@ var positionViewModel = new function () {
         $('.edit').click(function() {
             var targetId = '#val' + this.id;
             $(targetId).height(300);
-            var basicEditor = new Quill(targetId);
-            basicEditor.addModule('toolbar', {
-                container: '#basic-toolbar'
-            });
         });
     };
     bindDeleteHandlers = function() {
@@ -113,7 +123,7 @@ var positionViewModel = new function () {
     };
     this.save = function() {
         apiWrapper.savePosition(position, function(result) {
-            alert(JSON.stringify(result));
+            //alert(JSON.stringify(result));
         });
     };
 };
