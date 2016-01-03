@@ -2,6 +2,9 @@
     text-decoration: none;
     border-bottom: none;
 }
+.editable-form {
+    width:100%;
+}
 .some_class{
     width: 600px;
 }
