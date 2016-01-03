@@ -32,9 +32,9 @@ namespace XBio.Service
             new PositionRepository().Save(position);
         }
 
-        public void DeletePosition(int personId, int positionId)
+        public void DeletePosition(int positionId)
         {
-            throw new NotImplementedException();
+            new PositionRepository().Delete(positionId);
         }
     }
 }

@@ -130,17 +130,38 @@ namespace XBio.Data
                 new SqlParameter("PersonId", SqlDbType.Int) {Value = position.PersonId},
                 new SqlParameter("CompanyId", SqlDbType.Int) {Value = position.CompanyId},
                 new SqlParameter("TitleId", SqlDbType.Int) {Value = position.TitleId},
-                new SqlParameter("StartDate", SqlDbType.Date) {Value = position.StartDate},
-                new SqlParameter("EndDate", SqlDbType.Date) {Value = position.EndDate}
+                new SqlParameter("StartDate", SqlDbType.Date) {Value = position.StartDate}
             };
 
-            var positionId = ExecuteIdentity(Queries.PositionSave, paramList);
+            string queryName;
+            if (position.EndDate.HasValue)
+            {
+                queryName = Queries.PositionSave;
+                paramList.Add(new SqlParameter("EndDate", SqlDbType.Date) {Value = position.EndDate});
+            }
+            else
+            {
+                queryName = Queries.PositionSaveCurrent;
+            }
+
+            var positionId = ExecuteIdentity(queryName, paramList);
 
             if (position.Details.Any())
                 position.Details.ToList().ForEach(x => { Save(positionId, x); });
 
             position.Id = positionId;
 
+        }
+
+        public void Delete(int positionId)
+        {
+            var sqlStatement = "DELETE FROM [PositionDetail] WHERE [PositionId] = @Id; DELETE FROM [Position] WHERE [Id] = @Id";
+            var paramList = new List<SqlParameter>
+            {
+                new SqlParameter("Id", SqlDbType.Int) {Value = positionId}
+            };
+
+            ExecuteInLineSql(sqlStatement, paramList);
         }
 
         private List<PositionDetail> GetDetails(IDataReader rdr)
@@ -220,7 +241,6 @@ namespace XBio.Data
 
         private void DeletePositionDetail(int id)
         {
-
             var sqlStatement = "DELETE FROM [PositionDetail] WHERE [Id] = @Id";
             var paramList = new List<SqlParameter>
             {

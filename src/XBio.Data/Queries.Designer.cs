@@ -206,6 +206,39 @@ namespace XBio.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[Position] WHERE [Id] = @Id)
+        ///	BEGIN
+        ///		UPDATE dbo.[Position]
+        ///		SET
+        ///			[CompanyId] = @CompanyId,
+        ///			[TitleId] = @TitleId,
+        ///			[StartDate] = @StartDate,
+        ///			[Modified] = GetDate()
+        ///		WHERE [Id] = @Id
+        ///		SELECT @Id
+        ///	END
+        ///ELSE
+        ///	BEGIN
+        ///		INSERT INTO dbo.[Position] (
+        ///			[PersonId],
+        ///			[CompanyId],
+        ///			[TitleId],
+        ///			[StartDate])
+        ///		VALUES (
+        ///			@PersonId,
+        ///			@CompanyId,
+        ///			@TitleId,
+        ///			@StartDate)
+        ///		SELECT SCOPE_IDENTITY()
+        ///	END.
+        /// </summary>
+        internal static string PositionSaveCurrent {
+            get {
+                return ResourceManager.GetString("PositionSaveCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT
         ///	P.Id,
         ///	T.[Value] + &apos; - &apos; + C.[Name] AS [Value]

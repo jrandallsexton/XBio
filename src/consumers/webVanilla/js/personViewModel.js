@@ -14,9 +14,12 @@ var personViewModel = new function () {
             html.push('<h2>' + position.Title + ' @ ' + position.Company  + '</h2>');
             //html.push('<h3>' + position.StartDate + ' - ' + position.EndDate  + '</h3>');
             if (position.Details !== null) {
+                html.push('<ul>');
                 $.each(position.Details, function(subIndex, detail) {
-                    html.push('<p>' + detail.Value + '</p>');
+                    //html.push('<p>' + detail.Value + '</p>');
+                    html.push('<li>' + detail.Value + '</li>');
                 });
+                html.push('</ul>');
             }
         })
         $('#positions').html(html.join(''));

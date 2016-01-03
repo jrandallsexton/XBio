@@ -24,6 +24,7 @@ var positionViewModel = new function () {
         apiWrapper.getPositions(this.personId, function(data) {
             var html = [];
             html.push('<option value="-1">[ Select ]</option>');
+            html.push('<option value="-99">[ Create New Position ]</option>');
             $.each(data, function(index,item) {
                 html.push('<option value="' + item.Id + '">' + item.Name + '</option>');
             });
@@ -32,6 +33,12 @@ var positionViewModel = new function () {
         this.bindHandlers();
     };
     onSelectedPositionChanged = function(personId, positionId) {
+        if (positionId == -99) {
+            position = new PositionModel();
+            position.PersonId = personId;
+            displayPosition(position);
+            return;
+        }
         this.positionId = positionId;
         apiWrapper.getPosition(personId, positionId, function(data) {
             this.position = new PositionModel(data);
@@ -118,10 +125,25 @@ var positionViewModel = new function () {
         $('#positions').change(function() {
             onSelectedPositionChanged(1, $('#positions').val());
         });
+        $('#companies').change(function() {
+            position.CompanyId = $('#companies').val();
+        });
+        $('#titles').change(function() {
+            position.TitleId = $('#titles').val();
+        });
     };
     this.save = function() {
+        $('#save').prop("disabled", true);
         apiWrapper.savePosition(position, function(result) {
-            //alert(JSON.stringify(result));
+            $.bootstrapGrowl("Position and details saved.", { type: 'success' });
+            $('#save').prop("disabled", false);
+        });
+    };
+    this.delete = function() {
+        $('#delete').prop("disabled", true);
+        apiWrapper.deletePosition(this.personId, position.Id, function(result) {
+            $.bootstrapGrowl("Position and details deleted.", { type: 'success' });
+            $('#delete').prop("disabled", false);
         });
     };
 };

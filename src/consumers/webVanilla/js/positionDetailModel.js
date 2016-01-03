@@ -8,7 +8,7 @@ var PositionDetailModel = function() {
 };
 
 var PositionModel = function(data) {
-    this.Id = -1;
+    this.Id = null;
     this.PersonId = null;
     this.CompanyId = null;
     this.TitleId = null;
@@ -18,7 +18,7 @@ var PositionModel = function(data) {
     this.Created = null;
     this.Modified = null;
 
-    if (data !== null) {
+    if ((data !== null) && (data !== undefined)) {
         this.Id = data.Id;
         this.PersonId = data.PersonId;
         this.CompanyId = data.CompanyId;

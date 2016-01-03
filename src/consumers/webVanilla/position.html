@@ -63,8 +63,9 @@
                 </table>
                 <br/>
                 <div class="pull-right">
-                    <input class="btn btn-default" type="button" value="Cancel">
-                    <input class="btn btn-default" type="submit" value="Save" onclick="positionViewModel.save()">
+                    <input class="btn btn-default" type="button" id="cancel" value="Cancel">
+                    <input class="btn btn-default" type="submit" id="delete" value="Delete" onclick="positionViewModel.delete()">
+                    <input class="btn btn-default" type="submit" id="save" value="Save" onclick="positionViewModel.save()">
                 </div>
             </div>
         </div>
@@ -72,6 +73,7 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
         <script src="js/apiWrapper.js"></script>
         <script src="js/positionDetailModel.js"></script>
         <script src="js/positionViewModel.js"></script>

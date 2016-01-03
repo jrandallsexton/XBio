@@ -44,11 +44,50 @@ var apiWrapper = new function () {
     this.getTitles = function (callback) {
         this.getData("getTitles", this.rootPath + "api/title/lookup", callback); };
 
-    this.savePosition = function(position, callback) {
-        var url = this.rootPath + "api/person/" + position.PersonId + "/position/" + position.Id;
-        this.ajaxPut(url, position, true, function (values) {
+    this.deletePosition = function(personId, positionId, callback) {
+        var url = this.rootPath + "api/person/" + personId + "/position/" + positionId;
+        this.ajaxDelete(url, function (values) {
             callback(values);
         }, true);
+    };
+
+    this.savePosition = function(position, callback) {
+        if (position.PositionId == null) {
+            var url = this.rootPath + "api/person/" + position.PersonId + "/position";
+            this.ajaxPost(url, position, true, function (values) {
+                callback(values);
+            }, true);
+        }
+        else {
+            var url = this.rootPath + "api/person/" + position.PersonId + "/position/" + position.Id;
+            this.ajaxPut(url, position, true, function (values) {
+                callback(values);
+            }, true);
+        }
+    };
+
+    this.ajaxDelete = function(url, callback, returnData) {
+        $.ajax({
+            data: {},
+            type: "DELETE",
+            url: url,
+            contentType: "application/json",
+            dataType: "json",
+            cache: false,
+            success: function (result) {
+                if (callback != null) {
+                    if (returnData) {
+                        callback(result);
+                    }
+                    else {
+                        callback();
+                    }
+                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
     };
 
     this.ajaxGet = function(url, callback, returnData) {
@@ -57,6 +96,31 @@ var apiWrapper = new function () {
             type: "GET",
             url: url,
             contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (result) {
+                if (callback != null) {
+                    if (returnData) {
+                        callback(result);
+                    }
+                    else {
+                        callback();
+                    }
+                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                debugger;
+            }
+        });
+    };
+
+    this.ajaxPost = function(url, data, returnData, callback) {
+        $.ajax({
+            data: JSON.stringify(data),
+            type: "POST",
+            url: url,
+            traditional: true,
+            contentType: "application/json",
             dataType: "json",
             cache: false,
             success: function (result) {

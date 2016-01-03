@@ -41,20 +41,21 @@ namespace XBio.Api.Controllers
 
         [ResponseType(typeof(Position))]
         [HttpPost]
-        [Route("{personId:int}/position")]
+        [Route("{personId:int}/position", Name="CreatePosition")]
         public IHttpActionResult CreatePosition(int personId, Position position)
         {
             position.PersonId = personId;
             new PersonService().SavePosition(position);
-            var route = string.Format("api/person/{0}/position/{1}", personId, position.Id);
-            return CreatedAtRoute(route, null, new PositionService().Get(position.Id));
+            return CreatedAtRoute("GetPosition", new { controller = "person", personId = position.PersonId, positionId = position.Id }, position);
         }
 
-        [ResponseType(typeof(IPosition))]
+        [ResponseType(typeof(Position))]
         [HttpGet]
-        [Route("{personId:int}/position/{positionId:int}")]
+        [Route("{personId:int}/position/{positionId:int}", Name="GetPosition")]
         public IHttpActionResult GetPosition(int personId, int positionId)
         {
+            if (personId < 0)
+                return BadRequest("invalid personId");
             return Ok(new PositionService().Get(positionId));
         }
 
@@ -73,12 +74,13 @@ namespace XBio.Api.Controllers
             return Ok(position);
         }
 
+        [ResponseType(typeof(bool))]
         [HttpDelete]
         [Route("{personId:int}/position/{positionId:int}")]
         public IHttpActionResult UpdatePosition(int personId, int positionId)
         {
-            new PersonService().DeletePosition(personId, positionId);
-            return Ok();
+            new PersonService().DeletePosition(positionId);
+            return Ok(true);
         }
 
     }
