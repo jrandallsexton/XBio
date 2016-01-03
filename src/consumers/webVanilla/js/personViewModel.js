@@ -23,5 +23,8 @@ var personViewModel = new function () {
             }
         })
         $('#positions').html(html.join(''));
-    }
+    };
+    this.exportWord = function() {
+        $("#container").wordExport();
+    };
 };
