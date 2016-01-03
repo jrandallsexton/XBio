@@ -17,34 +17,40 @@
         </nav>
         <br/>
         <div class="container">
-            <label for="positions">Position</label>
-            <select id="positions"></select>
-            <br/>
-            <br/>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="companies">Company</label>
-                    <select id="companies" class="form-control"></select>
-                </div>
-                <div class="col-sm-4">
-                    <label for="titles">Title</label>
-                    <select id="titles" class="form-control"></select>
+                    <label for="positions">Position</label>
+                    <select id="positions" class="form-control"></select>
                 </div>
             </div>
             <br/>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label for="start">Start Date:</label>
-                    <a href="#" id="start" data-type="combodate" data-value="1984-05-15" data-title="Select date"></a>
+            <br/>
+            <div id="position" style="display:none">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="companies">Company</label>
+                        <select id="companies" class="form-control"></select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="titles">Title</label>
+                        <select id="titles" class="form-control"></select>
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <label for="end">End Date:</label>
-                    <a href="#" id="end" data-type="combodate" data-value="1984-05-15" data-title="Select date"></a>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="start">Start Date:</label>
+                        <a href="#" id="start" data-type="combodate" data-title="Select date"></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="end">End Date:</label>
+                        <a href="#" id="end" data-type="combodate" data-title="Select date"></a>
+                    </div>
                 </div>
             </div>
             <br/>
-            <div>
-                <table id="positionDetails" class="table table-striped table-bordered" style="display:none">
+            <div id="details" style="display:none">
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th style="width:5%">Action</th>
@@ -55,11 +61,11 @@
                     </thead>
                     <tbody id="tblBody"></tbody>
                 </table>
-            </div>
-            <br/>
-            <div class="pull-right">
-                <input class="btn btn-default" type="button" value="Cancel">
-                <input class="btn btn-default" type="submit" value="Save" onclick="positionViewModel.save()">
+                <br/>
+                <div class="pull-right">
+                    <input class="btn btn-default" type="button" value="Cancel">
+                    <input class="btn btn-default" type="submit" value="Save" onclick="positionViewModel.save()">
+                </div>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

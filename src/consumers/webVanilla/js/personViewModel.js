@@ -11,7 +11,8 @@ var personViewModel = new function () {
 
         var html = [];
         $.each(person.Positions, function(index, position) {
-            html.push('<h2>' + position.Title + '</h2>');
+            html.push('<h2>' + position.Title + ' @ ' + position.Company  + '</h2>');
+            //html.push('<h3>' + position.StartDate + ' - ' + position.EndDate  + '</h3>');
             if (position.Details !== null) {
                 $.each(position.Details, function(subIndex, detail) {
                     html.push('<p>' + detail.Value + '</p>');

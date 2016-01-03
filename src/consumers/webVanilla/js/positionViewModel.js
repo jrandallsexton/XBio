@@ -41,8 +41,8 @@ var positionViewModel = new function () {
     displayPosition = function (position) {
         if (position == null)
             return;
-        //$('#start').val(moment(position.StartDate, "yyyy-MM-dd"));
-        //$('#end').val(position.EndDate);
+        $('#start').editable('setValue', position.StartDate, true);
+        $('#end').editable('setValue', position.EndDate, true);
         $('#companies').val(position.CompanyId);
         $('#titles').val(position.TitleId);
         displayDetails(position.Details);
@@ -62,15 +62,20 @@ var positionViewModel = new function () {
         }
         html.push('<tr><td><span class="add" style="margin-left:10px;"><i class="fa fa-plus"></i></span></td><td></td><td></td><td></td></tr>');
         $('#tblBody').html(html.join(''));
-        $('#positionDetails').show();
+        $('#position').show();
+        $('#details').show();
         bindAddHandlers();
         bindDeleteHandlers();
         bindXEditable();
     };
     bindXEditable = function() {
         $('.detailValue').editable({ placement: "bottom" });
-        $('#start').editable({ placement: "bottom" });
-        $('#end').editable({ placement: "bottom" });
+        $('#start').on('save', function(e, params) {
+            position.StartDate = params.newValue;
+        });
+        $('#end').on('save', function(e, params) {
+            position.EndDate = params.newValue;
+        });
         $('.detailValue').on('save', function(e, params) {
             var dataId = $('#' + this.id).data('id');
             //alert('id: ' + this.id + ' data-id: ' + dataId);
