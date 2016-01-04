@@ -51,6 +51,8 @@
     </Compile>
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="ResumeRepository.cs" />
+    <Compile Include="SkillRepository.cs" />
+    <Compile Include="TechnologyRepository.cs" />
     <Compile Include="TitleRepository.cs" />
   </ItemGroup>
   <ItemGroup>

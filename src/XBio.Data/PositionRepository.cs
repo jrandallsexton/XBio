@@ -219,7 +219,6 @@ namespace XBio.Data
 
         private void Save(int positionId, IPositionDetail detail)
         {
-
             if (detail.Deleted.HasValue)
             {
                 DeletePositionDetail(detail.Id);

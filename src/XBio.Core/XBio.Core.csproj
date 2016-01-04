@@ -60,6 +60,9 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\PositionDetail.cs" />
+    <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\Technology.cs" />
+    <Compile Include="Models\TechnologyType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

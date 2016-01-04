@@ -45,6 +45,7 @@
     <Compile Include="PositionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResumeService.cs" />
+    <Compile Include="TechnologyService.cs" />
     <Compile Include="TitleService.cs" />
   </ItemGroup>
   <ItemGroup>

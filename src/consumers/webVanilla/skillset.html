@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>playground</title>
+    <title>skillset</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
           rel="stylesheet"
@@ -17,19 +17,27 @@
     </nav>
     <div class="container">
         <br/>
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">General</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work History</a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Skillset</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Misc</a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">...</div>
-            <div role="tabpanel" class="tab-pane" id="profile">...</div>
-            <div role="tabpanel" class="tab-pane" id="messages">...</div>
-            <div role="tabpanel" class="tab-pane" id="settings">...</div>
+        <!--<div id="details" style="display:none">-->
+        <div id="details">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:5%">Action</th>
+                        <th style="width:10%">Technology Type</th>
+                        <th style="width:10%">Technology</th>
+                        <th style="width:10%">First Used</th>
+                        <th style="width:10%">Last Used</th>
+                        <th style="width:10%">Number of Years Used</th>
+                    </tr>
+                </thead>
+                <tbody id="tblBody"></tbody>
+            </table>
+            <br/>
+            <div class="pull-right">
+                <input class="btn btn-danger" type="submit" id="delete" value="Delete" onclick="skillsViewModel.delete()">
+                <input class="btn btn-warning" type="button" id="cancel" value="Cancel">
+                <input class="btn btn-success" type="submit" id="save" value="Save" onclick="skillsViewModel.save()">
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -37,5 +45,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
     <script src="js/apiWrapper.js"></script>
+    <script src="js/skillsViewModel.js"></script>
+    <script>
+        $( document ).ready(function() {
+            skillsViewModel.init();
+        });
+    </script>
 </body>
 </html>

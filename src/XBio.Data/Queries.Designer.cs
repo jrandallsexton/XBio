@@ -253,5 +253,37 @@ namespace XBio.Data {
                 return ResourceManager.GetString("PositionsLookupByPersonId", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[Skill] WHERE [Id] = @Id)
+        ///	BEGIN
+        ///		UPDATE dbo.[Skill]
+        ///		SET
+        ///			[PersonId] = @PersonId,
+        ///			[TechnologyId] = @TechnologyId,
+        ///			[FirstUsedYear] = @FirstUsedYear,
+        ///			[LastUsedYear] = @LastUsedYear,
+        ///			[NumYearsUsed] = @NumYearsUsed,
+        ///			[Modified] = GetDate()
+        ///		WHERE [Id] = @Id
+        ///		SELECT @Id
+        ///	END
+        ///ELSE
+        ///	BEGIN
+        ///		INSERT INTO dbo.[Skill] (
+        ///			[PersonId],
+        ///			[TechnologyId],
+        ///			[FirstUsedYear],
+        ///			[LastUsedYear],
+        ///			[NumYearsUsed])
+        ///		VALUES (
+        ///			@PersonId,
+        ///			@Techn [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SkillSave {
+            get {
+                return ResourceManager.GetString("SkillSave", resourceCulture);
+            }
+        }
     }
 }

@@ -41,6 +41,13 @@ var apiWrapper = new function () {
         }, true);
     };
 
+    this.getSkills = function(personId, callback) {
+        var url = this.rootPath + "api/person/" + personId + "/skill"
+        this.ajaxGet(url, function (values) {
+            callback(values);
+        }, true);
+    };
+
     this.getTitles = function (callback) {
         this.getData("getTitles", this.rootPath + "api/title/lookup", callback); };
 

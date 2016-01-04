@@ -83,5 +83,24 @@ namespace XBio.Api.Controllers
             return Ok(true);
         }
 
+        [ResponseType(typeof(IEnumerable<Skill>))]
+        [HttpGet]
+        [Route("{personId:int}/skill")]
+        public IHttpActionResult GetSkills(int personId)
+        {
+            return Ok(new PersonService().GetSkills(personId));
+        }
+
+        [ResponseType(typeof(bool))]
+        [HttpPut]
+        [Route("{personId:int}/skill")]
+        public IHttpActionResult UpdateSkills(int personId, List<Skill> skills)
+        {
+            if (personId < 0)
+                return BadRequest("invalid personId");
+
+            new PersonService().SaveSkills(skills);
+            return Ok(true);
+        }
     }
 }

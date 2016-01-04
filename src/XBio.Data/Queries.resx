@@ -258,4 +258,35 @@ INNER JOIN [Company] C ON C.[Id] = P.[CompanyId]
 WHERE P.[PersonId] = @PersonId
 ORDER BY [Value] DESC</value>
   </data>
+  <data name="SkillSave" xml:space="preserve">
+    <value>IF EXISTS (SELECT * FROM [dbo].[Skill] WHERE [Id] = @Id)
+	BEGIN
+		UPDATE dbo.[Skill]
+		SET
+			[PersonId] = @PersonId,
+			[TechnologyId] = @TechnologyId,
+			[FirstUsedYear] = @FirstUsedYear,
+			[LastUsedYear] = @LastUsedYear,
+			[NumYearsUsed] = @NumYearsUsed,
+			[Modified] = GetDate()
+		WHERE [Id] = @Id
+		SELECT @Id
+	END
+ELSE
+	BEGIN
+		INSERT INTO dbo.[Skill] (
+			[PersonId],
+			[TechnologyId],
+			[FirstUsedYear],
+			[LastUsedYear],
+			[NumYearsUsed])
+		VALUES (
+			@PersonId,
+			@TechnologyId,
+			@FirstUsedYear,
+			@LastUsedYear,
+			@NumYearsUsed)
+		SELECT SCOPE_IDENTITY()
+	END</value>
+  </data>
 </root>

@@ -36,5 +36,15 @@ namespace XBio.Service
         {
             new PositionRepository().Delete(positionId);
         }
+
+        public void SaveSkills(IEnumerable<Skill> skills)
+        {
+            new SkillRepository().Save(skills);
+        }
+
+        public List<Skill> GetSkills(int personId)
+        {
+            return new SkillRepository().GetSkills(personId);
+        }
     }
 }
