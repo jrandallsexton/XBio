@@ -11,6 +11,15 @@ namespace XBio.Api.Controllers
     [RoutePrefix("api/technology")]
     public class TechnologyController : ApiController
     {
+
+        [ResponseType(typeof(IEnumerable<Select2Item>))]
+        [HttpGet]
+        [Route("lookup")]
+        public IHttpActionResult Get()
+        {
+            return Ok(new TechnologyService().GetTechnologies());
+        }
+
         [ResponseType(typeof(IEnumerable<KvpItem>))]
         [HttpGet]
         [Route("lookup/{technologyTypeId:int}")]

@@ -12,9 +12,30 @@ namespace XBio.Data
 {
     public class TechnologyRepository : RepositoryBase
     {
-        public IEnumerable<Technology> GetTechnologies()
+        public IEnumerable<Select2Item> GetTechnologies()
         {
-            throw new NotImplementedException();
+            var values = new List<Select2Item>();
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT [Id], [Name] FROM [Technology] ORDER BY [Name]";
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    while (rdr.Read())
+                    {
+                        values.Add(new Select2Item(rdr.GetInt32(0), rdr.GetString(1)));
+                    }
+                }
+            }
+
+            return values;
         }
 
         public IEnumerable<KvpItem> GetTechnologiesByType(int technologyTypeId)

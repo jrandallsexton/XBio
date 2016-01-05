@@ -51,6 +51,9 @@ var apiWrapper = new function () {
     this.getTitles = function (callback) {
         this.getData("getTitles", this.rootPath + "api/title/lookup", callback); };
 
+    this.getTechnologies = function(callback) {
+        this.getData("getTechnologies", this.rootPath + "api/technology/lookup", callback); };
+
     this.deletePosition = function(personId, positionId, callback) {
         var url = this.rootPath + "api/person/" + personId + "/position/" + positionId;
         this.ajaxDelete(url, function (values) {

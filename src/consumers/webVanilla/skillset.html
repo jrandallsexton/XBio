@@ -9,6 +9,9 @@
           integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
           crossorigin="anonymous">
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2-bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/star-rating.min.css" rel="stylesheet"/>
     <link href="css/vanilla.css" rel="stylesheet"/>
 </head>
 <body>
@@ -23,11 +26,11 @@
                 <thead>
                     <tr>
                         <th style="width:5%">Action</th>
-                        <th style="width:10%">Technology Type</th>
-                        <th style="width:10%">Technology</th>
+                        <th style="width:35%">Technology</th>
                         <th style="width:10%">First Used</th>
                         <th style="width:10%">Last Used</th>
                         <th style="width:10%">Number of Years Used</th>
+                        <th style="width:20%">Strength</th>
                     </tr>
                 </thead>
                 <tbody id="tblBody"></tbody>
@@ -44,7 +47,10 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
+    <script src="js/lib/star-rating.min.js"></script>
     <script src="js/apiWrapper.js"></script>
+    <script src="js/models/skillModel.js"></script>
     <script src="js/skillsViewModel.js"></script>
     <script>
         $( document ).ready(function() {

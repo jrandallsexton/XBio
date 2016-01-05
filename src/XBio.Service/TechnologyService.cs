@@ -10,9 +10,9 @@ namespace XBio.Service
 {
     public class TechnologyService
     {
-        public IEnumerable<Technology> GetTechnologies()
+        public IEnumerable<Select2Item> GetTechnologies()
         {
-            throw new NotImplementedException();
+            return new TechnologyRepository().GetTechnologies();
         }
 
         public IEnumerable<KvpItem> GetTechnologiesByType(int technologyTypeId)
