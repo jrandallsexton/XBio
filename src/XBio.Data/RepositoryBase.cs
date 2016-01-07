@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -14,8 +15,7 @@ namespace XBio.Data
 
         public RepositoryBase()
         {
-            this._connectionString =
-                @"Persist Security Info=False;Initial Catalog=ResumeDb;Data Source=DBSVR01;User Id=sa;Password=sesame1?";
+            _connectionString = ConfigurationManager.ConnectionStrings["ResumeDb"].ConnectionString;
         }
 
         /// <summary>
