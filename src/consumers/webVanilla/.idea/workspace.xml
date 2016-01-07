@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f14b85f5-cb4a-407b-8c2b-f74e993ad21a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/models/skillModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio Solution.v12.suo" afterPath="$PROJECT_DIR$/../../XBio Solution.v12.suo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Api/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.Api/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Core/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.Core/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.Data/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.External/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.External/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Service/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.Service/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Api/Controllers/TechnologyController.cs" afterPath="$PROJECT_DIR$/../../XBio.Api/Controllers/TechnologyController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Core/Dtos/Select2Item.cs" afterPath="$PROJECT_DIR$/../../XBio.Core/Dtos/Select2Item.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/TechnologyRepository.cs" afterPath="$PROJECT_DIR$/../../XBio.Data/TechnologyRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Service/TechnologyService.cs" afterPath="$PROJECT_DIR$/../../XBio.Service/TechnologyService.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vanilla.css" afterPath="$PROJECT_DIR$/css/vanilla.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiWrapper.js" afterPath="$PROJECT_DIR$/js/apiWrapper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/skillsViewModel.js" afterPath="$PROJECT_DIR$/js/skillsViewModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skillset.html" afterPath="$PROJECT_DIR$/skillset.html" />
-    </list>
+    <list default="true" id="f14b85f5-cb4a-407b-8c2b-f74e993ad21a" name="Default" comment="" />
     <ignored path="webVanilla.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,7 +110,7 @@
       <file leaf-file-name="vanilla.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/vanilla.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
+            <state vertical-scroll-proportion="0.0">
               <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
               <folding />
             </state>
@@ -248,8 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -316,6 +296,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,7 +375,7 @@
     <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18243954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18243954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1468,7 +1450,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/vanilla.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding />
         </state>
