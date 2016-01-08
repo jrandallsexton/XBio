@@ -45,6 +45,7 @@
     <Compile Include="Dtos\PositionDetailDto.cs" />
     <Compile Include="Dtos\PositionDto.cs" />
     <Compile Include="Dtos\Select2Item.cs" />
+    <Compile Include="Dtos\SelectItem.cs" />
     <Compile Include="Interfaces\IAddress.cs" />
     <Compile Include="Interfaces\IAuditable.cs" />
     <Compile Include="Interfaces\ICompany.cs" />

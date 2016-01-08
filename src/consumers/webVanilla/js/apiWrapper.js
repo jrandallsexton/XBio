@@ -51,8 +51,19 @@ var apiWrapper = new function () {
     this.getTitles = function (callback) {
         this.getData("getTitles", this.rootPath + "api/title/lookup", callback); };
 
+    this.getNumYears = function(callback) {
+        var data = [];
+        data.push({value: 1, text:"1"});
+        data.push({value: 2, text:"2"});
+        data.push({value: 3, text:"3"});
+        callback(data);
+    };
+
     this.getTechnologies = function(callback) {
         this.getData("getTechnologies", this.rootPath + "api/technology/lookup", callback); };
+
+    this.getYears = function(callback) {
+        this.getData("getYears", this.rootPath + "api/years/lookup", callback); };
 
     this.deletePosition = function(personId, positionId, callback) {
         var url = this.rootPath + "api/person/" + personId + "/position/" + positionId;
@@ -74,6 +85,13 @@ var apiWrapper = new function () {
                 callback(values);
             }, true);
         }
+    };
+
+    this.saveSkills = function(personId, skills, callback) {
+        var url = this.rootPath + "api/person/" + personId + "/skill";
+        this.ajaxPut(url, skills, true, function (values) {
+            callback(values);
+        }, true);
     };
 
     this.ajaxDelete = function(url, callback, returnData) {

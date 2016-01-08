@@ -285,5 +285,25 @@ namespace XBio.Data {
                 return ResourceManager.GetString("SkillSave", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT [Id]
+        ///      ,[PersonId]
+        ///      ,[TechnologyId]
+        ///      ,[FirstUsedYear]
+        ///      ,[LastUsedYear]
+        ///      ,[NumYearsUsed]
+        ///      ,[Created]
+        ///      ,[Modified]
+        ///      ,[Deleted]
+        ///  FROM [ResumeDb].[dbo].[Skill] S
+        ///  WHERE S.[PersonId] = @PersonId
+        ///  ORDER BY S.[Created].
+        /// </summary>
+        internal static string SkillsGetByPersonId {
+            get {
+                return ResourceManager.GetString("SkillsGetByPersonId", resourceCulture);
+            }
+        }
     }
 }

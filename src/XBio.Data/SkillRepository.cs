@@ -12,7 +12,39 @@ namespace XBio.Data
     {
         public List<Skill> GetSkills(int personId)
         {
-            return new List<Skill>();
+            var values = new List<Skill>();
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = Queries.SkillsGetByPersonId;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("PersonId", SqlDbType.Int) { Value = personId });
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    while (rdr.Read())
+                    {
+                        var skill = new Skill
+                        {
+                            Id = rdr.GetInt32(0),
+                            PersonId = personId,
+                            TechnologyId = rdr.GetInt32(2),
+                            FirstUsedYear = rdr.GetInt32(3),
+                            LastUsedYear = rdr.GetInt32(4),
+                            NumYearsUsed = rdr.IsDBNull(5) ? int.MinValue : rdr.GetDecimal(5),
+                            Created = rdr.GetDateTime(6)
+                        };
+                        values.Add(skill);
+                    }
+                }
+            }
+
+            return values;
         }
 
         public void Save(IEnumerable<Skill> skills)

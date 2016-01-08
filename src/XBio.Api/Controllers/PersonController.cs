@@ -102,5 +102,6 @@ namespace XBio.Api.Controllers
             new PersonService().SaveSkills(skills);
             return Ok(true);
         }
+
     }
 }

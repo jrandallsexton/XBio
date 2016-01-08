@@ -289,4 +289,18 @@ ELSE
 		SELECT SCOPE_IDENTITY()
 	END</value>
   </data>
+  <data name="SkillsGetByPersonId" xml:space="preserve">
+    <value>SELECT [Id]
+      ,[PersonId]
+      ,[TechnologyId]
+      ,[FirstUsedYear]
+      ,[LastUsedYear]
+      ,[NumYearsUsed]
+      ,[Created]
+      ,[Modified]
+      ,[Deleted]
+  FROM [ResumeDb].[dbo].[Skill] S
+  WHERE S.[PersonId] = @PersonId
+  ORDER BY S.[Created]</value>
+  </data>
 </root>

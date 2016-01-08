@@ -11,6 +11,7 @@ namespace XBio.Core.Models
         public int FirstUsedYear { get; set; }
         public int LastUsedYear { get; set; }
         public decimal NumYearsUsed { get; set; }
+        public decimal Strength { get; set; }
         public DateTime Created { get; set; }
         public DateTime? Modified { get; set; }
         public DateTime? Deleted { get; set; }
