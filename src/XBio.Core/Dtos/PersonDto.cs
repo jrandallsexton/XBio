@@ -14,11 +14,13 @@ namespace XBio.Core.Dtos
         public string Display { get; set; }
         public AddressDto Address { get; set; }
         public IEnumerable<PositionDto> Positions { get; set; }
+        public IEnumerable<SkillDto> Skills { get; set; } 
 
         public PersonDto()
         {
             this.Address = new AddressDto();
             this.Positions = new List<PositionDto>();
+            this.Skills = new List<SkillDto>();
         }
     }
 }

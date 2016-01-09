@@ -53,9 +53,9 @@ var apiWrapper = new function () {
 
     this.getNumYears = function(callback) {
         var data = [];
-        data.push({value: 1, text:"1"});
-        data.push({value: 2, text:"2"});
-        data.push({value: 3, text:"3"});
+        for (var i=0; i<=20; i++) {
+            data.push({value: i, text: i.toString()});
+        }
         callback(data);
     };
 

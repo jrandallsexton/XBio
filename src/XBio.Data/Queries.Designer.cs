@@ -287,6 +287,25 @@ namespace XBio.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT
+        ///	TT.Value AS [TechnologyType],
+        ///	T.Name AS [Technology],
+        ///	S.FirstUsedYear,
+        ///	S.LastUsedYear,
+        ///	S.NumYearsUsed
+        ///  FROM Skill S
+        ///  INNER JOIN Technology T ON T.Id = S.TechnologyId
+        ///  INNER JOIN TechnologyType TT ON TT.Id = T.TechnologyTypeId
+        ///  WHERE S.PersonId = @PersonId
+        ///  ORDER BY [Technology].
+        /// </summary>
+        internal static string SkillsDtosGetByPersonId {
+            get {
+                return ResourceManager.GetString("SkillsDtosGetByPersonId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT [Id]
         ///      ,[PersonId]
         ///      ,[TechnologyId]

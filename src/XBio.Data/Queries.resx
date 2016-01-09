@@ -289,6 +289,19 @@ ELSE
 		SELECT SCOPE_IDENTITY()
 	END</value>
   </data>
+  <data name="SkillsDtosGetByPersonId" xml:space="preserve">
+    <value>SELECT
+	TT.Value AS [TechnologyType],
+	T.Name AS [Technology],
+	S.FirstUsedYear,
+	S.LastUsedYear,
+	S.NumYearsUsed
+  FROM Skill S
+  INNER JOIN Technology T ON T.Id = S.TechnologyId
+  INNER JOIN TechnologyType TT ON TT.Id = T.TechnologyTypeId
+  WHERE S.PersonId = @PersonId
+  ORDER BY [Technology]</value>
+  </data>
   <data name="SkillsGetByPersonId" xml:space="preserve">
     <value>SELECT [Id]
       ,[PersonId]

@@ -50,6 +50,7 @@ namespace XBio.Data
 
                 person.Address = new AddressRepository().GetAddressDtoByPersonId(id);
                 person.Positions = new PositionRepository().GetPositionDtos(id);
+                person.Skills = new SkillRepository().GetSkillsByPersonId(id);
             }
 
             return person;
