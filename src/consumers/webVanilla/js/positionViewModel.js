@@ -4,6 +4,7 @@ var positionViewModel = new function () {
     this.position = null;
     this.positionDetail = null;
     this.init = function() {
+        console.log('positionViewModel.init');
         $.fn.editable.defaults.mode = 'inline';
         apiWrapper.getCompanies(function(data) {
             var html = [];
@@ -58,22 +59,48 @@ var positionViewModel = new function () {
         var html = [];
         if (details !== null) {
             $.each(details, function(index,item) {
-                if (item.Deleted !== null) { return false; }
+                if (item.Deleted !== null) { return true; }
                 html.push('<tr>');
-                html.push('<td><span id="' + item.Order + '" class="delete" style="margin-left:10px;"><i class="fa fa-minus"></i></span></td>');
+                html.push('<td><span id="' + item.Order + '" class="delete" style="margin-left:10px;" onclick="deleteDetail(this);"><i class="fa fa-minus"></i></span></td>');
                 html.push('<td>' + item.Order + '</td>');
                 html.push('<td>' + item.Title + '</td>');
                 html.push('<td><a href="#" id="val' + item.Order + '" data-id="' + item.Order + '" data-type="textarea" class="detailValue" data-inputclass="some_class">' + item.Value + '</a></td>');
                 html.push('</tr>');
             });
         }
-        html.push('<tr><td><span class="add" style="margin-left:10px;"><i class="fa fa-plus"></i></span></td><td></td><td></td><td></td></tr>');
+        html.push('<tr><td><span class="add" style="margin-left:10px;" onclick="addDetail()"><i class="fa fa-plus"></i></span></td><td></td><td></td><td></td></tr>');
         $('#tblBody').html(html.join(''));
         $('#position').show();
         $('#details').show();
-        bindAddHandlers();
         bindDeleteHandlers();
         bindXEditable();
+    };
+    addDetail = function() {
+        var newDetails = new PositionDetailModel();
+        newDetails.PositionId = this.positionId;
+        newDetails.Order = position.Details.length;
+        this.positionDetail = newDetails;
+        position.Details.push(newDetails);
+        displayDetails(position.Details);
+    };
+    deleteDetail = function(sender) {
+        //debugger;
+        // find the positionDetail trying to be deleted
+        var targetOrder = parseInt(sender.id);
+        var found = false;
+        $.each(position.Details, function(index,item) {
+            if (found)
+                return false;
+            if (item.Order === targetOrder) {
+                //detail = item;
+                // add a deleted timestamp to it
+                item.Deleted = moment();
+                found = true;
+                return false;
+            }
+        });
+        // refresh the UI
+        displayDetails(position.Details);
     };
     bindXEditable = function() {
         $('.detailValue').editable({ placement: "bottom" });
@@ -94,18 +121,8 @@ var positionViewModel = new function () {
             });
         });
     };
-    bindAddHandlers = function() {
-        $('.add').click(function() {
-            var newDetails = new PositionDetailModel();
-            newDetails.PositionId = this.positionId;
-            newDetails.Order = position.Details.length;
-            this.positionDetail = newDetails;
-            position.Details.push(newDetails);
-            displayDetails(position.Details);
-        });
-    };
     bindDeleteHandlers = function() {
-        $('.delete').click(function() {
+/*        $('.delete').click(function() {
             // find the positionDetail trying to be deleted
             var detail;
             var targetOrder = this.id;
@@ -119,7 +136,7 @@ var positionViewModel = new function () {
             detail.Deleted = moment();
             // refresh the UI
             displayDetails(position.Details);
-        });
+        });*/
     };
     this.bindHandlers = function() {
         $('#positions').change(function() {

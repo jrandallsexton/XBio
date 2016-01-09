@@ -1,0 +1,24 @@
+<div class="container">
+    <br/>
+    <!--<div id="details" style="display:none">-->
+    <div id="details">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th style="width:5%">Action</th>
+                <th style="width:35%">Institution</th>
+                <th style="width:15%">From</th>
+                <th style="width:15%">To</th>
+                <th style="width:15%">Degree</th>
+            </tr>
+            </thead>
+            <tbody id="tblBody"></tbody>
+        </table>
+        <br/>
+        <div class="pull-right">
+            <input class="btn btn-danger" type="submit" id="delete" value="Delete" onclick="skillsViewModel.delete()">
+            <input class="btn btn-warning" type="button" id="cancel" value="Cancel">
+            <input class="btn btn-success" type="submit" id="save" value="Save" onclick="skillsViewModel.save()">
+        </div>
+    </div>
+</div>

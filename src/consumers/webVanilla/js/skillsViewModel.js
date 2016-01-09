@@ -2,6 +2,7 @@ var skillsViewModel = new function () {
     var personId = 1;
     var skills = null;
     this.init = function() {
+        console.log('skillsViewModel.init');
         $.fn.editable.defaults.mode = 'inline';
         skills = [];
         apiWrapper.getSkills(personId, function(data) {
@@ -21,9 +22,9 @@ var skillsViewModel = new function () {
         var html = [];
         if (skills !== null) {
             $.each(skills, function(index,item) {
-                if (item.Deleted !== null) { return false; }
+                if (item.Deleted !== null) { return true; }
                 html.push('<tr>');
-                html.push('<td><span id="' + item.Id + '" class="delete" style="margin-left:10px;"><i class="fa fa-minus"></i></span></td>');
+                html.push('<td><span id="' + item.Id + '" class="delete" style="margin-left:10px;" onclick="deleteSkill(this)"><i class="fa fa-minus"></i></span></td>');
                 html.push('<td><a href="#" data-id="' + item.Id + '" class="technology" data-type="select2" data-value="' + item.TechnologyId + '" data-inputclass="x-select2"></a></td>');
                 html.push('<td><a href="#" data-id="' + item.Id + '" class="years fYear" data-type="select" data-value="' + item.FirstUsedYear + '">' + item.FirstUsedYear + '</a></td>');
                 html.push('<td><a href="#" data-id="' + item.Id + '" class="years lYear" data-type="select" data-value="' + item.LastUsedYear + '">' + item.LastUsedYear + '</a></td>');
@@ -32,21 +33,34 @@ var skillsViewModel = new function () {
                 html.push('</tr>');
             });
         }
-        html.push('<tr><td><span class="add" style="margin-left:10px;"><i class="fa fa-plus"></i></span></td><td></td><td></td><td></td><td></td><td></td></tr>');
-        $('#tblBody').html(html.join(''));
-        bindAddHandlers();
+        html.push('<tr><td><span class="addSkill" style="margin-left:10px;" onclick="addSkill()"><i class="fa fa-plus"></i></span></td><td></td><td></td><td></td><td></td><td></td></tr>');
+        $('#tblSkills').html(html.join(''));
         bindXEditable();
-        $("#input-2").rating({clearCaption: "No stars yet"});
+        $(".rating").rating({clearCaption: "No stars yet"});
     };
-    bindAddHandlers = function() {
-        $('.add').click(function() {
-            var newSkill = new SkillModel();
-            newSkill.Id = -(skills.length);
-            console.log(newSkill.Id);
-            newSkill.PersonId = personId;
-            skills.push(newSkill);
-            displaySkills(skills);
+    addSkill = function() {
+        var newSkill = new SkillModel();
+        newSkill.Id = -(skills.length);
+        console.log(newSkill.Id);
+        newSkill.PersonId = personId;
+        skills.push(newSkill);
+        displaySkills(skills);
+    };
+    deleteSkill = function(sender) {
+        // find the skill that we want to delete
+        var targetId = parseInt(sender.id);
+        var found = false;
+        $.each(skills, function(index,item) {
+            if (found)
+                return false;
+            if (item.Id === targetId) {
+                item.Deleted = moment();
+                found = true;
+                return false;
+            }
         });
+        // refresh the UI
+        displaySkills(skills);
     };
     bindXEditable = function() {
         apiWrapper.getTechnologies(function(data) {
@@ -55,8 +69,7 @@ var skillsViewModel = new function () {
                 var dataId = $(this).data('id');
                 $.each(skills, function(index,item) {
                     if (item.Id == dataId) {
-                        item.TechnologyId = params.newValue;
-                        console.log("Tech set to: " + item.TechnologyId);
+                        item.TechnologyId = parseInt(params.newValue);
                         return false;
                     }
                 });
@@ -68,7 +81,7 @@ var skillsViewModel = new function () {
                 var dataId = $(this).data('id');
                 $.each(skills, function(index,item) {
                     if (item.Id == dataId) {
-                        item.FirstUsedYear = params.newValue;
+                        item.FirstUsedYear = parseInt(params.newValue);
                         return false;
                     }
                 });
@@ -77,7 +90,7 @@ var skillsViewModel = new function () {
                 var dataId = $(this).data('id');
                 $.each(skills, function(index,item) {
                     if (item.Id == dataId) {
-                        item.LastUsedYear = params.newValue;
+                        item.LastUsedYear = parseInt(params.newValue);
                         return false;
                     }
                 });
@@ -89,7 +102,7 @@ var skillsViewModel = new function () {
                 var dataId = $(this).data('id');
                 $.each(skills, function(index,item) {
                     if (item.Id == dataId) {
-                        item.NumYearsUsed = params.newValue;
+                        item.NumYearsUsed = parseFloat(params.newValue);
                         return false;
                     }
                 });
@@ -102,6 +115,14 @@ var skillsViewModel = new function () {
     this.save = function() {
         apiWrapper.saveSkills(personId, skills, function(data) {
             $.bootstrapGrowl("Skills saved.", { type: 'success' });
+            refresh();
         });
     };
-};;
+    refresh = function() {
+        skills = [];
+        apiWrapper.getSkills(personId, function(data) {
+            skills = data;
+            displaySkills(data);
+        });
+    };
+};
