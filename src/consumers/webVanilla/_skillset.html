@@ -1,26 +1,23 @@
-<div class="container">
+<br/>
+<div id="details">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th style="width:5%">Action</th>
+            <th style="width:35%">Technology</th>
+            <th style="width:15%">First Used</th>
+            <th style="width:15%">Last Used</th>
+            <th style="width:15%">Years Used</th>
+            <th style="width:15%">Strength</th>
+        </tr>
+        </thead>
+        <tbody id="tblSkills"></tbody>
+    </table>
     <br/>
-    <!--<div id="details" style="display:none">-->
-    <div id="details">
-        <table class="table table-striped table-bordered">
-            <thead>
-            <tr>
-                <th style="width:5%">Action</th>
-                <th style="width:35%">Technology</th>
-                <th style="width:15%">First Used</th>
-                <th style="width:15%">Last Used</th>
-                <th style="width:15%">Years Used</th>
-                <th style="width:15%">Strength</th>
-            </tr>
-            </thead>
-            <tbody id="tblSkills"></tbody>
-        </table>
-        <br/>
-        <div class="pull-right">
-            <input class="btn btn-danger" type="submit" id="delete" value="Delete" onclick="skillsViewModel.delete()">
-            <input class="btn btn-warning" type="button" id="cancel" value="Cancel">
-            <input class="btn btn-success" type="submit" id="save" value="Save" onclick="skillsViewModel.save()">
-        </div>
+    <div class="pull-right">
+        <input class="btn btn-danger" type="submit" id="delete" value="Delete" onclick="skillsViewModel.delete()">
+        <input class="btn btn-warning" type="button" id="cancel" value="Cancel">
+        <input class="btn btn-success" type="submit" id="save" value="Save" onclick="skillsViewModel.save()">
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>

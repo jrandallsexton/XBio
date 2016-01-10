@@ -9,6 +9,7 @@ namespace XBio.Core.Dtos
         public string Company { get; set; }
         public string Title { get; set; }
         public bool Telecommute { get; set; }
+        public string Summary { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public string City { get; set; }

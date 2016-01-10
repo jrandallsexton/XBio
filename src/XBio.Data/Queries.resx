@@ -174,6 +174,7 @@ ELSE
 	C.[Name] AS [Company],
 	T.[Value] AS [Title],
 	0 AS [Telecommute],
+	P.Summary,
 	P.StartDate,
 	P.EndDate,
 	NULL AS [City],
@@ -185,7 +186,16 @@ WHERE P.[PersonId] = @PersonId
 ORDER BY P.[StartDate] DESC</value>
   </data>
   <data name="PositionGet" xml:space="preserve">
-    <value>SELECT * FROM dbo.[Position] P WHERE P.[Id] = @PositionId
+    <value>SELECT
+	P.[Id],
+	P.[PersonId],
+	P.[CompanyId],
+	P.[TitleId],
+	P.[StartDate],
+	P.[EndDate],
+	P.[Summary]
+FROM dbo.[Position] P
+WHERE P.[Id] = @PositionId
 
 SELECT PD.* FROM dbo.[PositionDetail] PD
 INNER JOIN dbo.[Position] P ON P.[Id] = PD.[PositionId]
@@ -200,7 +210,8 @@ WHERE P.[Id] = @PositionId</value>
 			[TitleId] = @TitleId,
 			[StartDate] = @StartDate,
 			[EndDate] = @EndDate,
-			[Modified] = GetDate()
+			[Modified] = GetDate(),
+			[Summary] = @Summary
 		WHERE [Id] = @Id
 		SELECT @Id
 	END
@@ -211,13 +222,15 @@ ELSE
 			[CompanyId],
 			[TitleId],
 			[StartDate],
-			[EndDate])
+			[EndDate],
+			[Summary])
 		VALUES (
 			@PersonId,
 			@CompanyId,
 			@TitleId,
 			@StartDate,
-			@EndDate)
+			@EndDate,
+			@Summary)
 		SELECT SCOPE_IDENTITY()
 	END</value>
   </data>

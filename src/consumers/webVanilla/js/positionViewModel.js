@@ -53,6 +53,7 @@ var positionViewModel = new function () {
         $('#end').editable('setValue', position.EndDate, true);
         $('#companies').val(position.CompanyId);
         $('#titles').val(position.TitleId);
+        $('#summary').editable('setValue', position.Summary, true);
         displayDetails(position.Details);
     };
     displayDetails = function(details) {
@@ -119,6 +120,9 @@ var positionViewModel = new function () {
                     return false;
                 }
             });
+        });
+        $('#summary').on('save', function(e, params) {
+            position.Summary = params.newValue;
         });
     };
     bindDeleteHandlers = function() {

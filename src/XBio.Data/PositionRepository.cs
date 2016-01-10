@@ -66,10 +66,11 @@ namespace XBio.Data
                             Company = rdr.GetString(1),
                             Title = rdr.GetString(2),
                             Telecommute = rdr.GetInt32(3) == 1 ? true : false,
-                            StartDate = rdr.GetDateTime(4),
-                            EndDate = rdr.IsDBNull(5) ? DateTime.MaxValue : rdr.GetDateTime(5),
-                            City = rdr.IsDBNull(6) ? string.Empty : rdr.GetString(6),
-                            State = rdr.IsDBNull(7) ? string.Empty : rdr.GetString(7),
+                            Summary = rdr.IsDBNull(4) ? string.Empty : rdr.GetString(4),
+                            StartDate = rdr.GetDateTime(5),
+                            EndDate = rdr.IsDBNull(6) ? DateTime.MaxValue : rdr.GetDateTime(6),
+                            City = rdr.IsDBNull(7) ? string.Empty : rdr.GetString(7),
+                            State = rdr.IsDBNull(8) ? string.Empty : rdr.GetString(8),
                             Details = GetDetailDtos(positionId)
                         };
                         positions.Add(position);
@@ -105,7 +106,9 @@ namespace XBio.Data
                         PersonId = rdr.GetInt32(1),
                         CompanyId = rdr.GetInt32(2),
                         TitleId = rdr.GetInt32(3),
-                        StartDate = rdr.GetDateTime(4)
+                        StartDate = rdr.GetDateTime(4),
+                        EndDate = rdr.IsDBNull(5) ? DateTime.MinValue : rdr.GetDateTime(5),
+                        Summary = rdr.IsDBNull(6) ? string.Empty : rdr.GetString(6)
                     };
 
                     if (!rdr.IsDBNull(5))
@@ -130,7 +133,8 @@ namespace XBio.Data
                 new SqlParameter("PersonId", SqlDbType.Int) {Value = position.PersonId},
                 new SqlParameter("CompanyId", SqlDbType.Int) {Value = position.CompanyId},
                 new SqlParameter("TitleId", SqlDbType.Int) {Value = position.TitleId},
-                new SqlParameter("StartDate", SqlDbType.Date) {Value = position.StartDate}
+                new SqlParameter("StartDate", SqlDbType.Date) {Value = position.StartDate},
+                new SqlParameter("Summary", SqlDbType.NVarChar) {Value = position.Summary}
             };
 
             string queryName;

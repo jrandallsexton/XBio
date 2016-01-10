@@ -141,6 +141,7 @@ namespace XBio.Data {
         ///	C.[Name] AS [Company],
         ///	T.[Value] AS [Title],
         ///	0 AS [Telecommute],
+        ///	P.Summary,
         ///	P.StartDate,
         ///	P.EndDate,
         ///	NULL AS [City],
@@ -158,7 +159,16 @@ namespace XBio.Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT * FROM dbo.[Position] P WHERE P.[Id] = @PositionId
+        ///   Looks up a localized string similar to SELECT
+        ///	P.[Id],
+        ///	P.[PersonId],
+        ///	P.[CompanyId],
+        ///	P.[TitleId],
+        ///	P.[StartDate],
+        ///	P.[EndDate],
+        ///	P.[Summary]
+        ///FROM dbo.[Position] P
+        ///WHERE P.[Id] = @PositionId
         ///
         ///SELECT PD.* FROM dbo.[PositionDetail] PD
         ///INNER JOIN dbo.[Position] P ON P.[Id] = PD.[PositionId]
@@ -179,7 +189,8 @@ namespace XBio.Data {
         ///			[TitleId] = @TitleId,
         ///			[StartDate] = @StartDate,
         ///			[EndDate] = @EndDate,
-        ///			[Modified] = GetDate()
+        ///			[Modified] = GetDate(),
+        ///			[Summary] = @Summary
         ///		WHERE [Id] = @Id
         ///		SELECT @Id
         ///	END
@@ -190,14 +201,13 @@ namespace XBio.Data {
         ///			[CompanyId],
         ///			[TitleId],
         ///			[StartDate],
-        ///			[EndDate])
+        ///			[EndDate],
+        ///			[Summary])
         ///		VALUES (
         ///			@PersonId,
         ///			@CompanyId,
         ///			@TitleId,
-        ///			@StartDate,
-        ///			@EndDate)
-        ///		SELECT SCOPE_IDEN [rest of string was truncated]&quot;;.
+        ///			@Star [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PositionSave {
             get {

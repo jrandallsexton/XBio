@@ -8,6 +8,7 @@ var PositionModel = function(data) {
     this.EndDate = null;
     this.Created = null;
     this.Modified = null;
+    this.Summary = null;
 
     if ((data !== null) && (data !== undefined)) {
         this.Id = data.Id;
@@ -19,5 +20,6 @@ var PositionModel = function(data) {
         this.EndDate = data.EndDate;
         this.Created = data.Created;
         this.Modified = data.Modified;
+        this.Summary = data.Summary;
     }
 };
