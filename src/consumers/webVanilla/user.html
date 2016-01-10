@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>XBio</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+          crossorigin="anonymous">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2-bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/star-rating.min.css" rel="stylesheet"/>
+    <link href="css/vanilla.css" rel="stylesheet"/>
 </head>
 <body>
-
+<nav id="navbar" class="navbar navbar-default container"></nav>
+<div class="container">
+    <!-- Nav tabs -->
+    <ul id="myTabs" class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#_position" aria-controls="_position" role="tab" data-toggle="tab">Positions</a></li>
+        <li role="presentation"><a href="#_skillset" aria-controls="_skillset" role="tab" data-toggle="tab">Skills</a></li>
+        <li role="presentation"><a href="#_education" aria-controls="_education" role="tab" data-toggle="tab">Education</a></li>
+        <li role="presentation"><a href="#_generated" aria-controls="_generated" role="tab" data-toggle="tab">Generated</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="_position"></div>
+        <div role="tabpanel" class="tab-pane" id="_skillset"></div>
+        <div role="tabpanel" class="tab-pane" id="_education"></div>
+        <div role="tabpanel" class="tab-pane" id="_generated"></div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+<script src="js/lib/star-rating.min.js"></script>
+<script src="js/apiWrapper.js"></script>
+<script src="js/xbio.common.js"></script>
+<script>
+    $( document ).ready(function() {
+//            var user = XBioCommon.user();
+//            if (user === null) {
+//                window.location = "login.html";
+//                return;
+//            }
+        $('#navbar').html(XBioCommon.navbarContent('default'));
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href") // activated tab
+            if ($(target).is(':empty')) {
+                var url = target.substring(1);
+                $( target ).load( "views/" + url +  ".html" );
+            }
+        });
+        $('#_position').load("views/_position.html" );
+    });
+</script>
 </body>
 </html>

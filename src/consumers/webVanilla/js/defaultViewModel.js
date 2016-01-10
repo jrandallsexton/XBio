@@ -1,3 +1,9 @@
-/**
- * Created by RSexton on 1/10/2016.
- */
+var DefaultViewModel = new function() {
+    this.init = function() {
+
+    };
+    this.login = function() {
+        window.location = "user.html";
+        return false;
+    };
+}

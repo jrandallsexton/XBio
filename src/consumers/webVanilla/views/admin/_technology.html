@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<br/>
+<div class="row">
+    <div class="col-sm-8">
+        <label for="positions">Technology</label>
+        <select id="positions" class="form-control"></select>
+    </div>
+</div>
+<br/>
+<script src="js/models/positionModel.js"></script>
+<script src="js/models/positionDetailModel.js"></script>
+<script src="js/positionViewModel.js"></script>
+<script>
+    $( document ).ready(function() {
+        positionViewModel.init();
+    });
+</script>
