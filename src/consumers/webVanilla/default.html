@@ -97,10 +97,10 @@
                 var target = $(e.target).attr("href") // activated tab
                 if ($(target).is(':empty')) {
                     var url = target.substring(1);
-                    $( target ).load( url + ".html" );
+                    $( target ).load( "views/" + url +  ".html" );
                 }
             });
-            $('#_position').load("_position.html" );
+            $('#_position').load("views/_position.html" );
         });
     </script>
 </body>

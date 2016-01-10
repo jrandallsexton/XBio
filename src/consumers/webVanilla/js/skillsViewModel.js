@@ -2,7 +2,6 @@ var skillsViewModel = new function () {
     var personId = 1;
     var skills = null;
     this.init = function() {
-        console.log('skillsViewModel.init');
         $.fn.editable.defaults.mode = 'inline';
         skills = [];
         apiWrapper.getSkills(personId, function(data) {

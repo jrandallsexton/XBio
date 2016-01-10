@@ -4,7 +4,6 @@ var positionViewModel = new function () {
     this.position = null;
     this.positionDetail = null;
     this.init = function() {
-        console.log('positionViewModel.init');
         $.fn.editable.defaults.mode = 'inline';
         apiWrapper.getCompanies(function(data) {
             var html = [];
