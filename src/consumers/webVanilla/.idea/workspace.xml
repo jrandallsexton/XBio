@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f14b85f5-cb4a-407b-8c2b-f74e993ad21a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio Solution.v12.suo" afterPath="$PROJECT_DIR$/../../XBio Solution.v12.suo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/obj/Debug/TempPE/Queries.Designer.cs.dll" afterPath="$PROJECT_DIR$/../../XBio.Data/obj/Debug/TempPE/Queries.Designer.cs.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../../XBio.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/Queries.Designer.cs" afterPath="$PROJECT_DIR$/../../XBio.Data/Queries.Designer.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/Queries.resx" afterPath="$PROJECT_DIR$/../../XBio.Data/Queries.resx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/RepositoryBase.cs" afterPath="$PROJECT_DIR$/../../XBio.Data/RepositoryBase.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/XBio.Data.csproj" afterPath="$PROJECT_DIR$/../../XBio.Data/XBio.Data.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Tests/App.config" afterPath="$PROJECT_DIR$/../../XBio.Tests/App.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Tests/XBio.Tests.csproj" afterPath="$PROJECT_DIR$/../../XBio.Tests/XBio.Tests.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/personViewModel.js" afterPath="$PROJECT_DIR$/js/personViewModel.js" />
-    </list>
+    <list default="true" id="f14b85f5-cb4a-407b-8c2b-f74e993ad21a" name="Default" comment="" />
     <ignored path="webVanilla.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -399,7 +387,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1515625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
