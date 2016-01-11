@@ -63,12 +63,14 @@ namespace XBio.Data {
         /// <summary>
         ///   Looks up a localized string similar to SELECT
         ///	A.[Address1],
-        ///	A.Address2,
-        ///	NULL AS [City],
-        ///	NULL AS [State],
+        ///	A.[Address2],
+        ///	C.[Name] AS [City],
+        ///	S.[Abbreviation] AS [State],
         ///	PO.[Value] AS [Postal]
         ///FROM [Address] A
         ///INNER JOIN [Postal] PO ON PO.[Id] = A.[PostalId]
+        ///INNER JOIN [City] C ON C.Id = PO.CityId
+        ///INNER JOIN [State] S ON S.[Id] = C.[StateId]
         ///INNER JOIN [Person] P ON P.[AddressId] = A.[Id]
         ///WHERE P.[Id] = @PersonId.
         /// </summary>

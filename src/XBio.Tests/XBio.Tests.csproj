@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\PositionRepositoryTests.cs" />
     <Compile Include="Repository\RepositoryBaseTests.cs" />
+    <Compile Include="Repository\SeederTests.cs" />
     <Compile Include="Service\ResumeServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>

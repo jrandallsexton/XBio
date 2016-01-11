@@ -11,7 +11,7 @@ var personViewModel = new function () {
 
         var html = [];
         $.each(person.Positions, function(index, position) {
-            html.push('<h3>' + position.Title + ' @ ' + position.Company  + '</h3>');
+            html.push('<h4>' + position.Title + ' @ ' + position.Company  + '</h4>');
             //html.push('<h3>' + position.StartDate + ' - ' + position.EndDate  + '</h3>');
             if (position.Details !== null) {
                 html.push('<ul>');
@@ -21,7 +21,15 @@ var personViewModel = new function () {
                 });
                 html.push('</ul>');
             }
-        })
+        });
+        if (person.Skills !== null) {
+            html.push('<h4>Skills</h4>');
+            html.push('<ul>');
+            $.each(person.Skills, function(index, item) {
+                html.push('<li>' + item.Technology + '</li>');
+            });
+            html.push('</ul>');
+        }
         $('#positions').html(html.join(''));
     };
     this.exportWord = function() {
