@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IResume.cs" />
     <Compile Include="Interfaces\IState.cs" />
     <Compile Include="Interfaces\ISummary.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Position.cs" />

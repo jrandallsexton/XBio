@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XBio.Core.Dtos;
+using XBio.Data;
+using XBio.Service;
 
-namespace XBio.Data
+namespace XBio.Utils
 {
     public class Seeder : RepositoryBase
     {
@@ -104,6 +106,47 @@ namespace XBio.Data
                 base.ExecuteInLineSql(temp, null);
             }
 
+        }
+
+        public void ImportCitiesCsv()
+        {
+            string FileName = @"C:\Projects\GitHub\XBio\src\data\cities.csv";
+            OleDbConnection conn = new OleDbConnection
+                ("Provider=Microsoft.Jet.OleDb.4.0; Data Source = " +
+                 Path.GetDirectoryName(FileName) +
+                 "; Extended Properties = \"Text;HDR=YES;FMT=Delimited\"");
+
+            conn.Open();
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter
+                ("SELECT * FROM " + Path.GetFileName(FileName), conn);
+
+            DataSet ds = new DataSet("Temp");
+            adapter.Fill(ds);
+
+            conn.Close();
+
+            Dictionary<string, int> stateList = new Dictionary<string, int>();
+            StateService service = new StateService();
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                var zip = row[0];
+                if (zip.ToString().Length < 5)
+                    zip = "0" + zip;
+                var state = row[1].ToString();
+                var city = row[2];
+                var lat = row[3];
+                var lon = row[4];
+
+                if (!stateList.ContainsKey(state))
+                {
+                    var id = service.GetIdByAbbreviation(240, state);
+                    stateList.Add(state, id);
+                    Console.WriteLine(state + "\t" + id);
+                }
+                //Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", zip, state, city, lat, lon);
+            }
         }
     }
 }

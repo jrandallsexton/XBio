@@ -55,10 +55,9 @@ namespace XBio.Data
                     cmdSql.CommandTimeout = 3000;
                     cmdSql.CommandType = CommandType.Text;
 
-                    foreach (var p in paramList)
-                    {
-                        cmdSql.Parameters.Add(p);
-                    }
+                    if (paramList != null)
+                        foreach (var p in paramList) { cmdSql.Parameters.Add(p); }
+
                     connection.Open();
                     var x = cmdSql.ExecuteScalar();
 

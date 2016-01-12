@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBio.Service", "XBio.Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBio.External", "XBio.External\XBio.External.csproj", "{1408EFA1-15AF-4038-8A99-51D3D4341C30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBio.Utils", "XBio.Utils\XBio.Utils.csproj", "{D67ED2DB-13E9-420C-AC45-1370CD88C0F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{1408EFA1-15AF-4038-8A99-51D3D4341C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1408EFA1-15AF-4038-8A99-51D3D4341C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1408EFA1-15AF-4038-8A99-51D3D4341C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67ED2DB-13E9-420C-AC45-1370CD88C0F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67ED2DB-13E9-420C-AC45-1370CD88C0F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67ED2DB-13E9-420C-AC45-1370CD88C0F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67ED2DB-13E9-420C-AC45-1370CD88C0F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

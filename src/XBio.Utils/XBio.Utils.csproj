@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70C84BC8-03ED-4C28-BD4C-03819540CCBF}</ProjectGuid>
+    <ProjectGuid>{D67ED2DB-13E9-420C-AC45-1370CD88C0F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XBio.Tests</RootNamespace>
-    <AssemblyName>XBio.Tests</AssemblyName>
+    <RootNamespace>XBio.Utils</RootNamespace>
+    <AssemblyName>XBio.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,21 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\PositionRepositoryTests.cs" />
-    <Compile Include="Repository\RepositoryBaseTests.cs" />
-    <Compile Include="Service\ResumeServiceTests.cs" />
+    <Compile Include="Seeder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XBio.Core\XBio.Core.csproj">
-      <Project>{97b76d14-2eed-4f5c-af1a-b47c6f250346}</Project>
-      <Name>XBio.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XBio.Data\XBio.Data.csproj">
       <Project>{ade107a5-88b6-4493-92aa-0f33ac33f866}</Project>
       <Name>XBio.Data</Name>

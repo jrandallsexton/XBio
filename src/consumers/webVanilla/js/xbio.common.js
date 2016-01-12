@@ -19,10 +19,16 @@ var XBioCommon = new function() {
             html.push('<li class="active"><a href="user.html">Experience <span class="sr-only">(current)</span></a></li>');
         }
         else {
-            html.push('<li><a href="user.html">Experience <span class="sr-only">(current)</span></a></li>');
+            html.push('<li><a href="user.html">Experience </a></li>');
         }
 
-        html.push('<li><a href="#">Resumes</a></li>');
+        if (sender == 'resume') {
+            html.push('<li class="active"><a href="resume.html">Resumes <span class="sr-only">(current)</span></a></li>');
+        }
+        else {
+            html.push('<li><a href="resume.html">Resumes</a></li>');
+        }
+
         html.push('</ul>');
         html.push('<ul class="nav navbar-nav navbar-right">');
 
