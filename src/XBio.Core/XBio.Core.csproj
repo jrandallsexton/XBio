@@ -59,10 +59,12 @@
     <Compile Include="Interfaces\IState.cs" />
     <Compile Include="Interfaces\ISummary.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\City.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\PositionDetail.cs" />
+    <Compile Include="Models\Postal.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Technology.cs" />
     <Compile Include="Models\TechnologyType.cs" />

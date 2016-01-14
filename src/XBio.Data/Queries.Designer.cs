@@ -81,6 +81,39 @@ namespace XBio.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[City] WHERE [Id] = @Id)
+        ///	BEGIN
+        ///		UPDATE dbo.[City]
+        ///		SET
+        ///			[StateId] = @StateId,
+        ///			[Name] = @Name,
+        ///			[Lat] = @Lat,
+        ///			[Lon] = @Lon
+        ///		WHERE [Id] = @Id
+        ///		SELECT @Id
+        ///	END
+        ///ELSE
+        ///	BEGIN
+        ///		INSERT INTO dbo.[City] (
+        ///			[StateId],
+        ///			[Name],
+        ///			[Lat],
+        ///			[Lon])
+        ///		VALUES (
+        ///			@StateId,
+        ///			@Name,
+        ///			@Lat,
+        ///			@Lon)
+        ///		SELECT SCOPE_IDENTITY()
+        ///	END.
+        /// </summary>
+        internal static string CitySave {
+            get {
+                return ResourceManager.GetString("CitySave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT P.[LastName], P.[FirstName], P.[MiddleName], P.[Display]
         ///FROM [Person] P
         ///WHERE P.[Id] = @PersonId.
@@ -263,6 +296,33 @@ namespace XBio.Data {
         internal static string PositionsLookupByPersonId {
             get {
                 return ResourceManager.GetString("PositionsLookupByPersonId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[Postal] WHERE [Id] = @Id)
+        ///	BEGIN
+        ///		UPDATE dbo.[Postal]
+        ///		SET
+        ///			[CityId] = @CityId,
+        ///			[Value] = @Value
+        ///		WHERE [Id] = @Id
+        ///		SELECT @Id
+        ///	END
+        ///ELSE
+        ///	BEGIN
+        ///		INSERT INTO dbo.[Postal] (
+        ///			[CityId],
+        ///			[Value])
+        ///		VALUES (
+        ///			@CityId,
+        ///			@Value)
+        ///		SELECT SCOPE_IDENTITY()
+        ///	END.
+        /// </summary>
+        internal static string PostalSave {
+            get {
+                return ResourceManager.GetString("PostalSave", resourceCulture);
             }
         }
         

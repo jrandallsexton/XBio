@@ -46,6 +46,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XBio.Core\XBio.Core.csproj">
+      <Project>{97b76d14-2eed-4f5c-af1a-b47c6f250346}</Project>
+      <Name>XBio.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XBio.Data\XBio.Data.csproj">
       <Project>{ade107a5-88b6-4493-92aa-0f33ac33f866}</Project>
       <Name>XBio.Data</Name>

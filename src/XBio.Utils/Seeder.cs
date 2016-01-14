@@ -5,9 +5,11 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using XBio.Data;
+using XBio.Core.Models;
 using XBio.Service;
 
 namespace XBio.Utils
@@ -126,26 +128,59 @@ namespace XBio.Utils
 
             conn.Close();
 
-            Dictionary<string, int> stateList = new Dictionary<string, int>();
-            StateService service = new StateService();
+            var stateList = new Dictionary<string, int>();
+            var service = new StateService();
+            var pService = new PostalService();
+            var cService = new CityService();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                var zip = row[0];
-                if (zip.ToString().Length < 5)
+                var zip = row[0].ToString().Trim();
+                if (zip.Length < 5)
                     zip = "0" + zip;
                 var state = row[1].ToString();
-                var city = row[2];
-                var lat = row[3];
-                var lon = row[4];
+                var city = row[2].ToString().Trim();
+                var lat = float.Parse(row[3].ToString().Trim());
+                var lon = float.Parse(row[4].ToString().Trim());
 
                 if (!stateList.ContainsKey(state))
                 {
-                    var id = service.GetIdByAbbreviation(240, state);
-                    stateList.Add(state, id);
-                    Console.WriteLine(state + "\t" + id);
+                    var stateId = service.GetIdByAbbreviation(240, state);
+                    stateList.Add(state, stateId);
+                    //Console.WriteLine("{0}\t{1}", state, stateId);
                 }
-                //Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", zip, state, city, lat, lon);
+
+                int test;
+                if (int.TryParse(city, out test))
+                {
+                    Console.WriteLine("Need city name for {0}", city);
+                    continue;
+                }
+
+                // do we already have a city in that state?
+                var existingCity = cService.Search(stateList[state], city);
+                if (existingCity == null)
+                {
+                    // insert the city
+                    existingCity = new City()
+                    {
+                        Name = city,
+                        Id = 0,
+                        Lat = lat,
+                        Lon = lon,
+                        StateId = stateList[state]
+                    };
+                    cService.Save(existingCity);
+                }
+
+                // insert the postal
+                var newPostal = new Postal()
+                {
+                    Id = 0,
+                    Value = zip,
+                    CityId = existingCity.Id
+                };
+                pService.Save(newPostal);
             }
         }
     }
