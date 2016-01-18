@@ -42,7 +42,7 @@ var XBioCommon = new function() {
         html.push('<li class="dropdown">');
         html.push('<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Randall (jrandallsexton@gmail.com) <span class="caret"></span></a>');
         html.push('<ul class="dropdown-menu">');
-        html.push('<li><a href="#">My Profile</a></li>');
+        html.push('<li><a href="profile.html">My Profile</a></li>');
         html.push('<li><a href="#">Linked Accounts</a></li>');
         html.push('<li role="separator" class="divider"></li>');
         html.push('<li><a href="#">Sign Out</a></li>');

@@ -39,8 +39,8 @@ namespace XBio.Data
                                 Id = rdr.GetInt32(0),
                                 StateId = rdr.GetInt32(1),
                                 Name = rdr.GetString(2),
-                                Lat = rdr.IsDBNull(3) ? (float)0 : rdr.GetFloat(3),
-                                Lon = rdr.IsDBNull(4) ? (float)0 : rdr.GetFloat(4)
+                                Lat = rdr.IsDBNull(3) ? 0 : (float)rdr.GetDouble(3),
+                                Lon = rdr.IsDBNull(4) ? 0 : (float)rdr.GetDouble(4)
                             };
                         }
                         catch (Exception ex)

@@ -42,11 +42,6 @@
 <script src="js/xbio.common.js"></script>
 <script>
     $( document ).ready(function() {
-//            var user = XBioCommon.user();
-//            if (user === null) {
-//                window.location = "login.html";
-//                return;
-//            }
         $('#navbar').html(XBioCommon.navbarContent('default'));
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
             var target = $(e.target).attr("href") // activated tab

@@ -112,7 +112,7 @@ namespace XBio.Utils
 
         public void ImportCitiesCsv()
         {
-            string FileName = @"C:\Projects\GitHub\XBio\src\data\cities.csv";
+            string FileName = @"F:\Projects\GitHub\XBio\src\data\cities.csv";
             OleDbConnection conn = new OleDbConnection
                 ("Provider=Microsoft.Jet.OleDb.4.0; Data Source = " +
                  Path.GetDirectoryName(FileName) +
