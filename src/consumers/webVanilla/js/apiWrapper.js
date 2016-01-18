@@ -94,6 +94,13 @@ var apiWrapper = new function () {
         }, true);
     };
 
+    this.searchCompanies = function(searchTerm, callback) {
+        var url = this.rootPath + "api/company/search/" + searchTerm;
+        this.ajaxGet(url, function (values) {
+            callback(values);
+        }, true);
+    };
+
     this.ajaxDelete = function(url, callback, returnData) {
         $.ajax({
             data: {},

@@ -13,7 +13,7 @@ namespace XBio.Data
     {
         public IEnumerable<KvpItem> GetLookups()
         {
-            var positions = new List<KvpItem>();
+            var values = new List<KvpItem>();
 
             using (var conn = new SqlConnection(ConnectionString))
             using (var cmd = conn.CreateCommand())
@@ -29,12 +29,38 @@ namespace XBio.Data
 
                     while (rdr.Read())
                     {
-                        positions.Add(new KvpItem(rdr.GetInt32(0), rdr.GetString(1)));
+                        values.Add(new KvpItem(rdr.GetInt32(0), rdr.GetString(1)));
                     }
                 }
             }
 
-            return positions;
-        } 
+            return values;
+        }
+
+        public IEnumerable<Select2Item> Search(string searchTerm)
+        {
+            var values = new List<Select2Item>();
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = string.Format("SELECT [Id], [Name] FROM [Company] WHERE [Name] LIKE '%{0}%' ORDER BY [Name]", searchTerm);
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    while (rdr.Read())
+                    {
+                        values.Add(new Select2Item(rdr.GetInt32(0), rdr.GetString(1)));
+                    }
+                }
+            }
+
+            return values;
+        }
     }
 }

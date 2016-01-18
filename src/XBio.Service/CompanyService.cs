@@ -20,6 +20,11 @@ namespace XBio.Service
             return new CompanyRepository().GetLookups();
         }
 
+        public IEnumerable<Select2Item> Search(string searchTerm)
+        {
+            return new CompanyRepository().Search(searchTerm);
+        }
+
         public void Save(ICompany company)
         {
             throw new NotImplementedException();

@@ -1,16 +1,14 @@
 <br/>
 <div class="row">
     <div class="col-sm-8">
-        <label for="positions">Company</label>
-        <select id="positions" class="form-control"></select>
+        <label for="companies">Company</label>
+        <select id="companies" class="form-control select2"></select>
     </div>
 </div>
 <br/>
-<script src="js/models/positionModel.js"></script>
-<script src="js/models/positionDetailModel.js"></script>
-<script src="js/positionViewModel.js"></script>
+<script src="js/companyViewModel.js"></script>
 <script>
     $( document ).ready(function() {
-        positionViewModel.init();
+        companyViewModel.init();
     });
 </script>

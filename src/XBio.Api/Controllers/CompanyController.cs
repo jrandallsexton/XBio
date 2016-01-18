@@ -17,7 +17,7 @@ namespace XBio.Api.Controllers
         [ResponseType(typeof(Company))]
         [HttpGet]
         [Route("{id:int}")]
-        public IHttpActionResult GET(int id)
+        public IHttpActionResult Get(int id)
         {
             return Ok(new CompanyService().Get(id));
         }
@@ -28,6 +28,14 @@ namespace XBio.Api.Controllers
         public IHttpActionResult GetLookup()
         {
             return Ok(new CompanyService().GetLookups());
+        }
+
+        [ResponseType(typeof(IEnumerable<Select2Item>))]
+        [HttpGet]
+        [Route("search")]
+        public IHttpActionResult Search(string q)
+        {
+            return Ok(new CompanyService().Search(q));
         }
 
         [ResponseType(typeof(Company))]
