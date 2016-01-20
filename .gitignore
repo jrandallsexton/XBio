@@ -47,3 +47,15 @@ Temporary Items
 .apdisk
 src/XBio.Api/bin/
 src/XBio.Utils/obj/
+src/XBio.Utils/bin/
+src/XBio.Tests/bin/
+src/XBio.Tests/obj/
+src/XBio.Service/obj/
+src/XBio.Service/bin/
+src/XBio.External/bin/
+src/XBio.External/obj/
+src/XBio.Data/obj/
+src/XBio.Data/bin/
+src/XBio.Core/bin/
+src/XBio.Api/obj/
+src/XBio.Core/obj/
