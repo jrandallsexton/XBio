@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndustryController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\TechnologyController.cs" />

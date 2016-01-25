@@ -1,7 +1,7 @@
 var companyViewModel = new function () {
     this.company = null;
     this.init = function () {
-        //$.fn.editable.defaults.mode = 'inline';
+        $.fn.editable.defaults.mode = 'inline';
         $("#companies").select2({
             ajax: {
                 url: "http://localhost/xbioApi/api/company/search",
@@ -58,5 +58,32 @@ var companyViewModel = new function () {
     };
     formatCompanySelection = function(repo) {
         return repo.text;
+    };
+    selectedCompanyChanged = function(sender) {
+        var id = $(sender).val();
+        apiWrapper.getCompany(id, function(result) {
+            this.company = result;
+            displayCompany(this.company);
+            $('#companyDetail').show();
+            bindXEditable();
+        });
+    };
+    displayCompany = function(company) {
+        $('#name').editable('setValue', company.Name, true);
+    };
+    websiteChanged = function(sender) {
+        //var ctl = $('#' + sender.id);
+        var url = $(sender).val();
+        if (!XBioCommon.isUrl(url))
+            alert('invalid url');
+    };
+    bindXEditable = function() {
+        $('.editable').editable();
+        $('#name').on('save', function(e, params) {
+            alert(params.newValue);
+        });
+        $('#website').on('save', function(e, params) {
+            alert(params.newValue);
+        });
     };
 }

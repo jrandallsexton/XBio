@@ -6,11 +6,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XBio.Core.Dtos;
+using XBio.Core.Models;
 
 namespace XBio.Data
 {
     public class CompanyRepository : RepositoryBase
     {
+
+        public Company Get(int id)
+        {
+            Company company = null;
+
+            using (var conn = new SqlConnection(ConnectionString))
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = Queries.CompanyGet;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("CompanyId", SqlDbType.Int) { Value = id });
+                conn.Open();
+
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (!rdr.HasRows)
+                        return null;
+
+                    rdr.Read();
+
+                    company = new Company
+                    {
+                        Id = rdr.GetInt32(0),
+                        Name = rdr.GetString(1),
+                        Url = rdr.IsDBNull(2) ? string.Empty : rdr.GetString(2)
+                    };
+
+                    if (!rdr.IsDBNull(3))
+                    {
+                        var addrId = rdr.GetInt32(3);
+                        company.HQ = new AddressRepository().Get(addrId);
+                    }                        
+
+                }
+            }
+
+            return company;
+        }
+
         public IEnumerable<KvpItem> GetLookups()
         {
             var values = new List<KvpItem>();

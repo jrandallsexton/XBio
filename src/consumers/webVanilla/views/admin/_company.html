@@ -2,7 +2,58 @@
 <div class="row">
     <div class="col-sm-8">
         <label for="companies">Company</label>
-        <select id="companies" class="form-control select2"></select>
+        <select id="companies" class="form-control select2" onchange="selectedCompanyChanged(this)"></select>
+    </div>
+</div>
+<br/>
+<div id="companyDetail" style="display:none">
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-4">
+                <label for="name">Name</label>
+                <a href="#" id="name" data-type="text" data-pk="1" class="editable"></a>
+            </div>
+            <div class="col-sm-4">
+                <label for="website">Website</label>
+                <a href="#" id="website" data-type="text" data-pk="1" class="editable"></a>
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-8">
+                Industries
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-8">
+                Logos
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <p>Primary Location</p>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="col-sm-4">
+                    <label for="Addr1">Addr1</label>
+                    <a href="#" id="Addr1" data-type="text" data-pk="1" class="editable"></a>
+                </div>
+                <div class="col-sm-4">
+                    <label for="Addr2">Addr2</label>
+                    <a href="#" id="Addr2" data-type="text" data-pk="1" class="editable"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-8">
+                Other Locations
+            </div>
+        </div>
     </div>
 </div>
 <br/>

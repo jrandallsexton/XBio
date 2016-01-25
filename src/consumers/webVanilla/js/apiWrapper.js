@@ -26,6 +26,13 @@ var apiWrapper = new function () {
     this.getCompanies = function (callback) {
         this.getData("getCompanies", this.rootPath + "api/company/lookup", callback); };
 
+    this.getCompany = function(id, callback) {
+        var url = this.rootPath + "api/company/" + id;
+        this.ajaxGet(url, function (values) {
+            callback(values);
+        }, true);
+    };
+
     this.getPosition = function(personId, positionId, callback) {
         var url = this.rootPath + "api/person/" + personId + "/position/" + positionId;
         this.ajaxGet(url, function (values) {

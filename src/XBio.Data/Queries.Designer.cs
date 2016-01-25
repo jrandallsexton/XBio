@@ -81,6 +81,17 @@ namespace XBio.Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT A.[Id], A.[Address1], A.[Address2], A.[PostalId], A.[Name]
+        ///FROM [Address] A
+        ///WHERE A.[Id] = @AddressId.
+        /// </summary>
+        internal static string AddressGet {
+            get {
+                return ResourceManager.GetString("AddressGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[City] WHERE [Id] = @Id)
         ///	BEGIN
         ///		UPDATE dbo.[City]
@@ -110,6 +121,48 @@ namespace XBio.Data {
         internal static string CitySave {
             get {
                 return ResourceManager.GetString("CitySave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT C.Id, C.[Name], U.Uri, C.AddressId
+        ///FROM [Company] C
+        ///LEFT JOIN [Uri] U ON U.[Id] = C.UriId
+        ///WHERE C.Id = @CompanyId.
+        /// </summary>
+        internal static string CompanyGet {
+            get {
+                return ResourceManager.GetString("CompanyGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT * FROM [dbo].[Company] WHERE [Id] = @Id)
+        ///	BEGIN
+        ///		UPDATE dbo.[Company]
+        ///		SET
+        ///			[Name] = @Name,
+        ///			[UriId] = @UriId,
+        ///			[AddressId] = @AddressId
+        ///		WHERE [Id] = @Id
+        ///		SELECT @Id
+        ///	END
+        ///ELSE
+        ///	BEGIN
+        ///		INSERT INTO dbo.[Company] (			
+        ///			[Name],
+        ///			[UriId],
+        ///			[AddressId])
+        ///		VALUES (			
+        ///			@Name,
+        ///			@UriId,
+        ///			@AddressId)
+        ///		SELECT SCOPE_IDENTITY()
+        ///	END.
+        /// </summary>
+        internal static string CompanySave {
+            get {
+                return ResourceManager.GetString("CompanySave", resourceCulture);
             }
         }
         

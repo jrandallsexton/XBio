@@ -183,5 +183,68 @@ namespace XBio.Utils
                 pService.Save(newPostal);
             }
         }
+
+        public void SeedIndustries()
+        {
+            var values = new List<string>() {
+                "Accommodations ",
+                "Accounting",
+                "Advertising",
+                "Aerospace",
+                "Agriculture & Agribusiness",
+                "Air Transportation",
+                "Apparel & Accessories",
+                "Auto",
+                "Banking",
+                "Beauty & Cosmetics",
+                "Biotechnology",
+                "Chemical",
+                "Communications",
+                "Computer",
+                "Construction",
+                "Consulting",
+                "Consumer Products",
+                "Education",
+                "Electronics",
+                "Employment",
+                "Energy",
+                "Entertainment & Recreation",
+                "Fashion",
+                "Financial Services",
+                "Food & Beverage",
+                "Health",
+                "Information",
+                "Information Technology",
+                "Insurance",
+                "Journalism & News",
+                "Legal Services",
+                "Manufacturing",
+                "Media & Broadcasting",
+                "Medical Devices & Supplies",
+                "Motion Pictures & Video",
+                "Music",
+                "Pharmaceutical",
+                "Public Administration",
+                "Publishing",
+                "Real Estate",
+                "Retail",
+                "Service",
+                "Sports",
+                "Technology",
+                "Telecommunications",
+                "Transportation",
+                "Travel",
+                "Utilities",
+                "Video Games",
+                "Web Services"
+            };
+
+            var sql = "INSERT INTO [Industry] ([Name]) VALUES ('{0}')";
+            foreach (var value in values)
+            {
+                var temp = string.Format(sql, value);
+                base.ExecuteInLineSql(temp, null);
+            }
+        }
     }
 }

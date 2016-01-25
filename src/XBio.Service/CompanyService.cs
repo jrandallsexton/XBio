@@ -12,7 +12,7 @@ namespace XBio.Service
     {
         public Company Get(int id)
         {
-            throw new NotImplementedException();
+            return new CompanyRepository().Get(id);
         }
 
         public IEnumerable<KvpItem> GetLookups()

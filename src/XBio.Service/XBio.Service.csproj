@@ -42,6 +42,7 @@
     <Compile Include="AddressService.cs" />
     <Compile Include="CityService.cs" />
     <Compile Include="CompanyService.cs" />
+    <Compile Include="IndustryService.cs" />
     <Compile Include="PersonService.cs" />
     <Compile Include="PositionService.cs" />
     <Compile Include="PostalService.cs" />
