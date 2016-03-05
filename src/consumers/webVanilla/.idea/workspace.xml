@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f14b85f5-cb4a-407b-8c2b-f74e993ad21a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio Solution.v12.suo" afterPath="$PROJECT_DIR$/../../XBio Solution.v12.suo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/obj/Debug/TempPE/Queries.Designer.cs.dll" afterPath="$PROJECT_DIR$/../../XBio.Data/obj/Debug/TempPE/Queries.Designer.cs.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Core/Models/Company.cs" afterPath="$PROJECT_DIR$/../../XBio.Core/Models/Company.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/AddressRepository.cs" afterPath="$PROJECT_DIR$/../../XBio.Data/AddressRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/CompanyRepository.cs" afterPath="$PROJECT_DIR$/../../XBio.Data/CompanyRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/Queries.Designer.cs" afterPath="$PROJECT_DIR$/../../XBio.Data/Queries.Designer.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Data/Queries.resx" afterPath="$PROJECT_DIR$/../../XBio.Data/Queries.resx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../XBio.Service/CompanyService.cs" afterPath="$PROJECT_DIR$/../../XBio.Service/CompanyService.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/apiWrapper.js" afterPath="$PROJECT_DIR$/js/apiWrapper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/companyViewModel.js" afterPath="$PROJECT_DIR$/js/companyViewModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/xbio.common.js" afterPath="$PROJECT_DIR$/js/xbio.common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/_position.html" afterPath="$PROJECT_DIR$/views/_position.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/_company.html" afterPath="$PROJECT_DIR$/views/admin/_company.html" />
-    </list>
+    <list default="true" id="f14b85f5-cb4a-407b-8c2b-f74e993ad21a" name="Default" comment="" />
     <ignored path="webVanilla.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,109 +20,122 @@
     <favorites_list name="webVanilla" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="address.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/address.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="93" selection-start-line="36" selection-start-column="93" selection-end-line="37" selection-end-column="122" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_company.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/admin/_company.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16349384">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_position.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/_position.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiWrapper.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/apiWrapper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-              <folding>
-                <element signature="e#140#438#0" expanded="false" />
-                <element signature="e#221#280#0" expanded="false" />
-                <element signature="e#326#424#0" expanded="false" />
-                <element signature="e#498#670#0" expanded="false" />
-                <element signature="e#717#806#0" expanded="false" />
-                <element signature="e#2891#2940#0" expanded="false" />
-                <element signature="e#3406#3447#0" expanded="false" />
-                <element signature="e#3522#3693#0" expanded="false" />
-                <element signature="e#3754#4365#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="companyViewModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/companyViewModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="60" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
-              <folding>
-                <element signature="e#176#1574#0" expanded="false" />
-                <element signature="e#1619#2664#0" expanded="false" />
-                <element signature="e#2710#2743#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="positionViewModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/positionViewModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="67" />
-              <folding>
-                <marker date="1452519426778" expanded="true" signature="2643:2660" placeholder="..." />
-                <marker date="1452519426778" expanded="true" signature="3165:3182" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="vertical" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/user.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_skillset.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/_skillset.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="22" selection-end-column="91" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/profile.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_company.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/admin/_company.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.67541766">
+                  <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+                  <folding>
+                    <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="skillsViewModel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/skillsViewModel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#112#316#0" expanded="false" />
+                    <element signature="e#349#524#0" expanded="false" />
+                    <marker date="1452519426781" expanded="true" signature="865:882" placeholder="..." />
+                    <marker date="1452519426781" expanded="true" signature="1998:2015" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_position.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/_position.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+                  <folding>
+                    <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="companyViewModel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/companyViewModel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#176#1574#0" expanded="false" />
+                    <element signature="e#1619#2664#0" expanded="false" />
+                    <element signature="e#2710#2743#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="positionViewModel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/positionViewModel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="67" />
+                  <folding>
+                    <marker date="1452519426778" expanded="true" signature="2643:2660" placeholder="..." />
+                    <marker date="1452519426778" expanded="true" signature="3165:3182" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/admin.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.73031026">
+                  <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -196,12 +194,12 @@
         <option value="$PROJECT_DIR$/user.html" />
         <option value="$PROJECT_DIR$/profile.html" />
         <option value="$PROJECT_DIR$/js/profileViewModel.js" />
-        <option value="$PROJECT_DIR$/admin.html" />
         <option value="$PROJECT_DIR$/css/vanilla.css" />
-        <option value="$PROJECT_DIR$/js/apiWrapper.js" />
         <option value="$PROJECT_DIR$/js/xbio.common.js" />
         <option value="$PROJECT_DIR$/views/_position.html" />
+        <option value="$PROJECT_DIR$/js/apiWrapper.js" />
         <option value="$PROJECT_DIR$/js/companyViewModel.js" />
+        <option value="$PROJECT_DIR$/admin.html" />
         <option value="$PROJECT_DIR$/views/admin/_company.html" />
       </list>
     </option>
@@ -407,7 +405,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1515625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -440,7 +438,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -669,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/skillsViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/personViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -697,18 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/_skillset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/address.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state vertical-scroll-proportion="-3.9230769">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,14 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.110990204">
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,43 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/apiWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="e#140#438#0" expanded="false" />
-            <element signature="e#221#280#0" expanded="false" />
-            <element signature="e#326#424#0" expanded="false" />
-            <element signature="e#498#670#0" expanded="false" />
-            <element signature="e#717#806#0" expanded="false" />
-            <element signature="e#2891#2940#0" expanded="false" />
-            <element signature="e#3406#3447#0" expanded="false" />
-            <element signature="e#3522#3693#0" expanded="false" />
-            <element signature="e#3754#4365#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8275476">
           <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51399773">
-          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="93" selection-start-line="36" selection-start-column="93" selection-end-line="37" selection-end-column="122" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,6 +730,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/skillsViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#112#316#0" expanded="false" />
+            <element signature="e#349#524#0" expanded="false" />
+            <marker date="1452519426781" expanded="true" signature="865:882" placeholder="..." />
+            <marker date="1452519426781" expanded="true" signature="1998:2015" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/apiWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3068553">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#140#438#0" expanded="false" />
+            <element signature="e#221#280#0" expanded="false" />
+            <element signature="e#326#424#0" expanded="false" />
+            <element signature="e#498#670#0" expanded="false" />
+            <element signature="e#615#656#0" expanded="false" />
+            <element signature="e#717#806#0" expanded="false" />
+            <element signature="e#854#1010#0" expanded="false" />
+            <element signature="e#955#996#0" expanded="false" />
+            <element signature="e#1215#1404#0" expanded="false" />
+            <element signature="e#1349#1390#0" expanded="false" />
+            <element signature="e#1460#1693#0" expanded="false" />
+            <element signature="e#1579#1679#0" expanded="false" />
+            <element signature="e#1746#1917#0" expanded="false" />
+            <element signature="e#1862#1903#0" expanded="false" />
+            <element signature="e#2090#2245#0" expanded="false" />
+            <element signature="e#2149#2215#0" expanded="false" />
+            <element signature="e#2431#2514#0" expanded="false" />
+            <element signature="e#2584#2776#0" expanded="false" />
+            <element signature="e#2721#2762#0" expanded="false" />
+            <element signature="e#2832#3351#0" expanded="false" />
+            <element signature="e#2875#3096#0" expanded="false" />
+            <element signature="e#3029#3078#0" expanded="false" />
+            <element signature="e#3110#3345#0" expanded="false" />
+            <element signature="e#3278#3327#0" expanded="false" />
+            <element signature="e#3413#3599#0" expanded="false" />
+            <element signature="e#3544#3585#0" expanded="false" />
+            <element signature="e#3660#3831#0" expanded="false" />
+            <element signature="e#3776#3817#0" expanded="false" />
+            <element signature="e#3892#4503#0" expanded="false" />
+            <element signature="e#3909#4495#0" expanded="false" />
+            <element signature="e#4123#4383#0" expanded="false" />
+            <element signature="e#4163#4369#0" expanded="false" />
+            <element signature="e#4201#4266#0" expanded="false" />
+            <element signature="e#4292#4351#0" expanded="false" />
+            <element signature="e#4444#4485#0" expanded="false" />
+            <element signature="e#4561#5184#0" expanded="false" />
+            <element signature="e#4578#5176#0" expanded="false" />
+            <element signature="e#4804#5064#0" expanded="false" />
+            <element signature="e#4844#5050#0" expanded="false" />
+            <element signature="e#4882#4947#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="e#5125#5166#0" expanded="false" />
+            <element signature="e#5249#5907#0" expanded="false" />
+            <element signature="e#5266#5899#0" expanded="false" />
+            <element signature="e#5527#5787#0" expanded="false" />
+            <element signature="e#5567#5773#0" expanded="false" />
+            <element signature="e#5605#5670#0" expanded="false" />
+            <element signature="e#5696#5755#0" expanded="false" />
+            <element signature="e#5848#5889#0" expanded="false" />
+            <element signature="e#5971#6628#0" expanded="false" />
+            <element signature="e#5988#6620#0" expanded="false" />
+            <element signature="e#6248#6508#0" expanded="false" />
+            <element signature="e#6288#6494#0" expanded="false" />
+            <element signature="e#6326#6391#0" expanded="false" />
+            <element signature="e#6417#6476#0" expanded="false" />
+            <element signature="e#6569#6610#0" expanded="false" />
+            <element signature="e#6687#6982#0" expanded="false" />
+            <element signature="e#6716#6774#0" expanded="false" />
+            <element signature="e#6780#6975#0" expanded="false" />
+            <element signature="e#6809#6892#0" expanded="false" />
+            <element signature="e#6898#6965#0" expanded="false" />
+            <element signature="e#7031#7309#0" expanded="false" />
+            <element signature="e#7135#7282#0" expanded="false" />
+            <element signature="e#7160#7219#0" expanded="false" />
+            <element signature="e#7225#7272#0" expanded="false" />
+            <element signature="e#7364#7652#0" expanded="false" />
+            <element signature="e#7393#7449#0" expanded="false" />
+            <element signature="e#7455#7646#0" expanded="false" />
+            <element signature="e#7484#7565#0" expanded="false" />
+            <element signature="e#7571#7636#0" expanded="false" />
+            <element signature="e#7699#8003#0" expanded="false" />
+            <element signature="e#7829#7976#0" expanded="false" />
+            <element signature="e#7854#7913#0" expanded="false" />
+            <element signature="e#7919#7966#0" expanded="false" />
+            <element signature="e#8041#8110#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/_position.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -795,6 +834,22 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/_skillset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="22" selection-end-column="91" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -809,10 +864,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/companyViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="60" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
+          <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
           <folding>
             <element signature="e#176#1574#0" expanded="false" />
             <element signature="e#1619#2664#0" expanded="false" />
@@ -821,10 +884,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73031026">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/_company.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16349384">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.67541766">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>

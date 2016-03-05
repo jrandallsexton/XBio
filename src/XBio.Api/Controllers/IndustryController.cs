@@ -8,6 +8,7 @@ using XBio.Service;
 
 namespace XBio.Api.Controllers
 {
+    [RoutePrefix("api/industry")]
     public class IndustryController : ApiController
     {
         [ResponseType(typeof(IEnumerable<Select2Item>))]

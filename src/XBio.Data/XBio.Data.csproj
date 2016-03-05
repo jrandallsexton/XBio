@@ -43,6 +43,7 @@
     <Compile Include="AddressRepository.cs" />
     <Compile Include="CityRepository.cs" />
     <Compile Include="CompanyRepository.cs" />
+    <Compile Include="IndustryRepository.cs" />
     <Compile Include="PersonRepository.cs" />
     <Compile Include="PositionRepository.cs" />
     <Compile Include="PostalRepository.cs" />

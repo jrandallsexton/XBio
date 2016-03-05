@@ -85,5 +85,8 @@ var companyViewModel = new function () {
         $('#website').on('save', function(e, params) {
             alert(params.newValue);
         });
+        apiWrapper.getIndustries(function(result) {
+            $('#industries').editable({ source: result });
+        });
     };
 }

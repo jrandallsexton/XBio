@@ -33,6 +33,9 @@ var apiWrapper = new function () {
         }, true);
     };
 
+    this.getIndustries = function(callback) {
+        this.getData("getIndustries", this.rootPath + "api/industry/lookup", callback); };
+
     this.getPosition = function(personId, positionId, callback) {
         var url = this.rootPath + "api/person/" + personId + "/position/" + positionId;
         this.ajaxGet(url, function (values) {

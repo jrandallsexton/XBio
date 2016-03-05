@@ -1,7 +1,8 @@
-﻿
+﻿ 
 using System.Collections.Generic;
 
 using XBio.Core.Dtos;
+using XBio.Data;
 
 namespace XBio.Service
 {
@@ -9,7 +10,7 @@ namespace XBio.Service
     {
         public List<Select2Item> Lookup()
         {
-            
+            return new IndustryRepository().Lookup();
         }
     }
 }
